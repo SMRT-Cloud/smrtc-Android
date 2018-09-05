@@ -96,7 +96,7 @@
     <string name="currency_message">Valitse mieleisesi paikallinen valuutta</string>
     <string name="title_fee">Taksa</string>
     <string name="title_currency">Paikallinen Valuutta</string>
-    <string name="title_pivx_send">Lähetysmäärä</string>
+    <string name="title_concierge_send">Lähetysmäärä</string>
     <string name="empty_message_address">Sinulla ei ole vielä yhtään tallennettua osoitetta.</string>
     <string name="error_message">Näyttää siltä että rahansiirrossasi on virhe</string>
     <string name="settings_change_trusted_node">Vaihda luotettu solmu</string>
@@ -107,7 +107,7 @@
     <string name="next">Seuraava</string>
     <string name="skip">Ohita</string>
     <string name="start">Aloita</string>
-    <string name="title_slide1">Pivx on turvallinen</string>
+    <string name="title_slide1">Concierge on turvallinen</string>
     <string name="desc_slide1">Ensimmäinen kolikko, jossa on BIP38 yksityisavainten salaus/avaus</string>
     <string name="title_slide2">60 SEKUNNIN LOHKO AIKA</string>
     <string name="desc_slide2">Jo valmiiksi erittäin nopea, PIVX rahansiirrot käyttäen SwiftTX:ää ovat välittömiä, nolla vahvistusta odotusaikaa.</string>

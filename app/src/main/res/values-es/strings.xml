@@ -96,7 +96,7 @@
     <string name="currency_message">Seleccione su moneda local</string>
     <string name="title_fee">Comisión</string>
     <string name="title_currency">Divisa Local</string>
-    <string name="title_pivx_send">Cantidad enviada</string>
+    <string name="title_concierge_send">Cantidad enviada</string>
     <string name="empty_message_address">Todavía no tiene direcciones guardadas.</string>
     <string name="error_message">Parece que ha habido un error\n con su transacción</string>
     <string name="settings_change_trusted_node">Cambiar nodo de confianza</string>
@@ -107,7 +107,7 @@
     <string name="next">Siguiente</string>
     <string name="skip">Saltar</string>
     <string name="start">Empezar</string>
-    <string name="title_slide1">Pivx es seguro</string>
+    <string name="title_slide1">Concierge es seguro</string>
     <string name="desc_slide1">La primera moneda digital con Encriptado y Desencriptado de Llaves Privadas BIP38</string>
     <string name="title_slide2">BLOQUES CADA 60 SEGUNDOS</string>
     <string name="desc_slide2">De por sí ya muy rápida, pero las transacciones PIVX que usan SwiftX son instantáneas sin tiempo de espera de confirmaciones.</string>

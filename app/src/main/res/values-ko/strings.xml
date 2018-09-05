@@ -96,7 +96,7 @@
     <string name="currency_message">원하시는 현지 통화를 선택해주세요.</string>
     <string name="title_fee">수수료</string>
     <string name="title_currency">현지 통화</string>
-    <string name="title_pivx_send">송금 금액</string>
+    <string name="title_concierge_send">송금 금액</string>
     <string name="empty_message_address">저장된 주소가 없습니다</string>
     <string name="error_message">거래내역중에 오류가 있습니다.</string>
     <string name="settings_change_trusted_node">신뢰할수 있는 노드로 변경</string>

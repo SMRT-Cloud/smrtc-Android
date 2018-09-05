@@ -96,7 +96,7 @@
     <string name="currency_message">Selecteer een lokale munteenheid \n naar jou keuze</string>
     <string name="title_fee">Kost</string>
     <string name="title_currency">Lokale Munteenheid</string>
-    <string name="title_pivx_send">Hoeveelheid verzonden</string>
+    <string name="title_concierge_send">Hoeveelheid verzonden</string>
     <string name="empty_message_address">Je hebt nog geen adressen opgeslaan</string>
     <string name="error_message">Er is mogelijk een fout \n met je transactie</string>
     <string name="settings_change_trusted_node">Wijzig trusted node</string>
@@ -107,10 +107,10 @@
     <string name="next">Volgende</string>
     <string name="skip">Overslaan</string>
     <string name="start">Beginnen</string>
-    <string name="title_slide1">Pivx is veilig</string>
+    <string name="title_slide1">Concierge is veilig</string>
     <string name="desc_slide1">Eerste munt met BIP38 encryptie en decryptie van private keys</string>
     <string name="title_slide2">60 seconden block time</string>
-    <string name="desc_slide2">Pivx transacties zijn nu al supersnel door het gebruik van SwiftTX zijn de transacties direct zonder dat er bevestiging nodig is.</string>
+    <string name="desc_slide2">Concierge transacties zijn nu al supersnel door het gebruik van SwiftTX zijn de transacties direct zonder dat er bevestiging nodig is.</string>
     <string name="title_slide3">Enorm veilig en privé</string>
     <string name="desc_slide3">PIVX richt zich er op om de eerste echte anonieme crypto-currency te zijn.</string>
     <string name="title_slide4">Trusted nodes federatie</string>

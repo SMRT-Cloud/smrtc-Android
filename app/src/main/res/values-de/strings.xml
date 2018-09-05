@@ -96,7 +96,7 @@
     <string name="currency_message">Wähle die lokale Währung \n deiner Wahl</string>
     <string name="title_fee">Gebühren</string>
     <string name="title_currency">Lokale Währung</string>
-    <string name="title_pivx_send">Betrag senden</string>
+    <string name="title_concierge_send">Betrag senden</string>
     <string name="empty_message_address">Du hast bisher keine gespeicherten Adressen.</string>
     <string name="error_message">Es scheint einen Fehler mit\n deiner Transaktion zu geben.</string>
     <string name="settings_change_trusted_node">Wechseln des vertrauenswürdigen Knoten</string>

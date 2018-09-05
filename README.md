@@ -11,7 +11,7 @@ app: The Android app itself. This is probably what you're searching for.
 
 pivtrumj: Stratum protocol implementation.
 
-pivx-core-0.14.3-12.1: pivxj.
+concierge-core-0.14.3-12.1: conciergej.
 
 You can build all sub-projects at once using Gradle:
 
