@@ -21,7 +21,7 @@ import com.github.clans.fab.FloatingActionMenu;
 
 import org.conciergej.core.Coin;
 import org.conciergej.core.Transaction;
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import java.util.List;
 import chain.BlockchainState;
 import concierge.org.conciergewallet.R;
 import global.exceptions.NoPeerConnectedException;
-import global.PivxRate;
+import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.base.BaseDrawerActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTwoButtonsDialog;
@@ -69,7 +69,7 @@ public class WalletActivity extends BaseDrawerActivity {
     private TextView txt_watch_only;
     private View view_background;
     private View container_syncing;
-    private PivxRate conciergeRate;
+    private ConciergeRate conciergeRate;
     private TransactionsFragmentBase txsFragment;
 
     // Receiver
@@ -197,7 +197,7 @@ public class WalletActivity extends BaseDrawerActivity {
 
     private void init() {
         // Start service if it's not started.
-        conciergeApplication.startPivxService();
+        conciergeApplication.startConciergeService();
 
         if (!conciergeApplication.getAppConf().hasBackup()){
             long now = System.currentTimeMillis();
@@ -295,7 +295,7 @@ public class WalletActivity extends BaseDrawerActivity {
                     if (conciergeModule.chechAddress(address)){
                         usedAddress = address;
                     }else {
-                        PivxURI conciergeUri = new PivxURI(address);
+                        ConciergeURI conciergeUri = new ConciergeURI(address);
                         usedAddress = conciergeUri.getAddress().toBase58();
                         final Coin amount = conciergeUri.getAmount();
                         if (amount != null){

@@ -20,10 +20,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import chain.BlockchainState;
-import global.PivxModuleImp;
+import global.ConciergeModuleImp;
 import concierge.org.conciergewallet.BuildConfig;
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.ui.base.BaseDrawerActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTwoButtonsDialog;
 import concierge.org.conciergewallet.ui.export_account.ExportKeyActivity;
@@ -77,7 +77,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         txt_network_info = (TextView) findViewById(R.id.txt_network_info);
 
         textAbout = (TextView)findViewById(R.id.text_about);
-        String text = "Made by<br> <font color=#55476c>Furszy</font> <br>(c) PIVX Community";
+        String text = "Made by<br> <font color=#55476c>akshaynexus</font> <br>(c) CCC Community";
         textAbout.setText(Html.fromHtml(text));
         // Open Backup Wallet
         buttonBackup = (Button) findViewById(R.id.btn_backup_wallet);
@@ -231,7 +231,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
             @Nullable
             @Override
             protected CharSequence subject() {
-                return PivxContext.REPORT_SUBJECT_ISSUE+" "+conciergeApplication.getVersionName();
+                return ConciergeContext.REPORT_SUBJECT_ISSUE+" "+conciergeApplication.getVersionName();
             }
 
             @Nullable
@@ -259,7 +259,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
             @Nullable
             @Override
             protected CharSequence collectWalletDump() throws IOException {
-                return ((PivxModuleImp)conciergeModule).getWallet().toString(false,true,true,null);
+                return ((ConciergeModuleImp)conciergeModule).getWallet().toString(false,true,true,null);
             }
         };
         dialog.show();

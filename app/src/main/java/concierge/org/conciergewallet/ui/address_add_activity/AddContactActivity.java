@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 
 import concierge.org.conciergewallet.R;
 import global.AddressLabel;
@@ -145,7 +145,7 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
                     if (conciergeModule.chechAddress(address)){
                         usedAddress = address;
                     }else {
-                        PivxURI conciergeUri = new PivxURI(address);
+                        ConciergeURI conciergeUri = new ConciergeURI(address);
                         usedAddress = conciergeUri.getAddress().toBase58();
                     }
                     final String tempPubKey = usedAddress;

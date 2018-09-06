@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 
-import concierge.org.conciergewallet.PivxApplication;
-import global.PivxModule;
+import concierge.org.conciergewallet.ConciergeApplication;
+import global.ConciergeModule;
 
 /**
  * Created by furszy on 6/29/17.
@@ -15,13 +15,13 @@ import global.PivxModule;
 
 public class BaseFragment extends Fragment {
 
-    protected PivxApplication conciergeApplication;
-    protected PivxModule conciergeModule;
+    protected ConciergeApplication conciergeApplication;
+    protected ConciergeModule conciergeModule;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        conciergeApplication = PivxApplication.getInstance();
+        conciergeApplication = ConciergeApplication.getInstance();
         conciergeModule = conciergeApplication.getModule();
     }
 

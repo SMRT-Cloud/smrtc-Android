@@ -17,7 +17,7 @@ import concierge.org.conciergewallet.R;
  * Created by mati on 18/04/17.
  */
 
-public abstract class BaseActivity extends PivxActivity {
+public abstract class BaseActivity extends ConciergeActivity {
 
     protected Toolbar toolbar;
     protected FrameLayout childContainer;

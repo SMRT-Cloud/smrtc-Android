@@ -13,8 +13,8 @@ import org.conciergej.core.InsufficientMoneyException;
 import org.conciergej.core.Transaction;
 
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
-import concierge.org.conciergewallet.service.PivxWalletService;
+import concierge.org.conciergewallet.module.ConciergeContext;
+import concierge.org.conciergewallet.service.ConciergeWalletService;
 import concierge.org.conciergewallet.ui.base.BaseDrawerActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.utils.DialogsUtil;
@@ -39,6 +39,7 @@ public class DonateActivity extends BaseDrawerActivity {
         root = getLayoutInflater().inflate(R.layout.donations_fragment,container);
         edit_amount = (EditText) root.findViewById(R.id.edit_amount);
         btn_donate = (Button) root.findViewById(R.id.btn_donate);
+        //setTheme(android.R.style.DeviceDefault_ButtonBar);
         btn_donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +57,7 @@ public class DonateActivity extends BaseDrawerActivity {
     private void send() {
         try {
             // create the tx
-            String addressStr = PivxContext.DONATE_ADDRESS;
+            String addressStr = ConciergeContext.DONATE_ADDRESS;
             if (!conciergeModule.chechAddress(addressStr))
                 throw new IllegalArgumentException("Address not valid");
             String amountStr = edit_amount.getText().toString();
@@ -75,7 +76,7 @@ public class DonateActivity extends BaseDrawerActivity {
             Transaction transaction = conciergeModule.buildSendTx(addressStr, amount, memo,conciergeModule.getReceiveAddress());
             // send it
             conciergeModule.commitTx(transaction);
-            Intent intent = new Intent(DonateActivity.this, PivxWalletService.class);
+            Intent intent = new Intent(DonateActivity.this, ConciergeWalletService.class);
             intent.setAction(ACTION_BROADCAST_TRANSACTION);
             intent.putExtra(DATA_TRANSACTION_HASH,transaction.getHash().getBytes());
             startService(intent);

@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 
 import pivtrum.PivtrumPeerData;
 
-import static concierge.org.conciergewallet.module.PivxContext.DEFAULT_RATE_COIN;
+import static concierge.org.conciergewallet.module.ConciergeContext.DEFAULT_RATE_COIN;
 
 /**
  * Created by furszy on 6/8/17.

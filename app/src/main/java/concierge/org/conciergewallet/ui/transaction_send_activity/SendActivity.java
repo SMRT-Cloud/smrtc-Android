@@ -32,7 +32,7 @@ import org.conciergej.core.NetworkParameters;
 import org.conciergej.core.Transaction;
 import org.conciergej.core.TransactionInput;
 import org.conciergej.core.TransactionOutput;
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 import org.conciergej.wallet.Wallet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,8 +48,8 @@ import java.util.Set;
 import concierge.org.conciergewallet.R;
 import global.AddressLabel;
 import global.exceptions.NoPeerConnectedException;
-import global.PivxRate;
-import concierge.org.conciergewallet.service.PivxWalletService;
+import global.ConciergeRate;
+import concierge.org.conciergewallet.service.ConciergeWalletService;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTwoButtonsDialog;
@@ -116,7 +116,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
     private EditText edit_memo;
     private MyFilterableAdapter filterableAdapter;
     private String addressStr;
-    private PivxRate conciergeRate;
+    private ConciergeRate conciergeRate;
     private SimpleTextDialog errorDialog;
     private ImageButton btnSwap;
     private ViewFlipper amountSwap;
@@ -180,7 +180,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         addAllPiv.setOnClickListener(this);
         conciergeRate = conciergeModule.getRate(conciergeApplication.getAppConf().getSelectedRateCoin());
 
-        txt_local_currency.setText("0 " + conciergeRate.getCode());
+        txt_local_currency.setText("0 " + "CCC");
 
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override
@@ -361,11 +361,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
         // todo: This is not updating the filter..
-        if (filterableAdapter==null) {
-            List<AddressLabel> list = new ArrayList<>(conciergeModule.getContacts());
-            filterableAdapter = new MyFilterableAdapter(this,list );
-            edit_address.setAdapter(filterableAdapter);
-        }
+//        if (filterableAdapter==null) {
+//            conciergeModule.getContacts()
+//            List<AddressLabel> list = new ArrayList<>(conciergeModule.getContacts());
+//            filterableAdapter = new MyFilterableAdapter(this,list );
+//            edit_address.setAdapter(filterableAdapter);
+//        }
 
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -500,7 +501,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     if (conciergeModule.chechAddress(address)){
                         usedAddress = address;
                     }else {
-                        PivxURI conciergeUri = new PivxURI(address);
+                        ConciergeURI conciergeUri = new ConciergeURI(address);
                         usedAddress = conciergeUri.getAddress().toBase58();
                     }
                     final String tempPubKey = usedAddress;
@@ -855,7 +856,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             return;
         }
         conciergeModule.commitTx(transaction);
-        Intent intent = new Intent(SendActivity.this, PivxWalletService.class);
+        Intent intent = new Intent(SendActivity.this, ConciergeWalletService.class);
         intent.setAction(ACTION_BROADCAST_TRANSACTION);
         intent.putExtra(DATA_TRANSACTION_HASH,transaction.getHash().getBytes());
         startService(intent);

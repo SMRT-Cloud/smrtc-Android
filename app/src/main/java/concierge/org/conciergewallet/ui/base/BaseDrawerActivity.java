@@ -27,14 +27,14 @@ import concierge.org.conciergewallet.ui.donate.DonateActivity;
 import concierge.org.conciergewallet.ui.settings_activity.SettingsActivity;
 import concierge.org.conciergewallet.ui.wallet_activity.WalletActivity;
 
-import static concierge.org.conciergewallet.module.PivxContext.OUT_OF_SYNC_TIME;
+import static concierge.org.conciergewallet.module.ConciergeContext.OUT_OF_SYNC_TIME;
 import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_NOTIFICATION;
 import static concierge.org.conciergewallet.service.IntentsConstants.INTENT_BROADCAST_DATA_BLOCKCHAIN_STATE;
 import static concierge.org.conciergewallet.service.IntentsConstants.INTENT_BROADCAST_DATA_PEER_CONNECTED;
 import static concierge.org.conciergewallet.service.IntentsConstants.INTENT_BROADCAST_DATA_TYPE;
 import static concierge.org.conciergewallet.service.IntentsConstants.INTENT_EXTRA_BLOCKCHAIN_STATE;
 
-public class BaseDrawerActivity extends PivxActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BaseDrawerActivity extends ConciergeActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private NavigationView navigationView;
     private FrameLayout frameLayout;

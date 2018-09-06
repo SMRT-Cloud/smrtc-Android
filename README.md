@@ -1,8 +1,8 @@
-# PIVX-Wallet
+# CCC-Wallet
 
-![alt text](https://github.com/PIVX-Project/PIVX-Android/blob/master/banner/Feature%20Image.jpg)
+![alt text](https://github.com/CCC-Project/CCC-Android/blob/master/banner/Feature%20Image.jpg)
 
-Welcome to the PIVX mobile wallet for android!
+Welcome to the CCC mobile wallet for android!
 
 
 This project contains several sub-projects:
@@ -20,11 +20,11 @@ gradle clean build
 
 ### Cloning repository.
 
-Use git clone --recurse-submodules https://github.com/<PIVX or furszy>/PIVX-Android.git
+Use git clone --recurse-submodules https://github.com/<CCC or furszy>/CCC-Android.git
   
 #### or
 
-Use git clone https://github.com/<PIVX or furszy>/PIVX-Android.git
+Use git clone https://github.com/<CCC or furszy>/CCC-Android.git
   
 git submodule init
 

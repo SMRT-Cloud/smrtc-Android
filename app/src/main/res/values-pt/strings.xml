@@ -11,7 +11,7 @@
         <item>Urano</item>
         <item>Netuno</item>
     </string-array>
-    <string name="app_name">Carteira PIVX</string>
+    <string name="app_name">Carteira CCC</string>
     <string name="btn_create_wallet">Criar Carteira</string>
     <string name="btn_restore_wallet">Recuperar Carteira</string>
     <string name="restore_wallet_message">Selecione uma cópia de segurança da carteira
@@ -119,9 +119,9 @@ de código aberto, descentralizada e de alta privacidade, dirigida por uma comun
     <string name="title_slide1">Concierge é seguro</string>
     <string name="desc_slide1">Primeira moeda com a encriptação BIP38 e decodificação de chaves privadas</string>
     <string name="title_slide2">60 segundos tempo de bloqueio</string>
-    <string name="desc_slide2">Além de muito rápidas, as trasações PIVX usando SwiftX possuem um tempo de espera de confirmação iguais a ZERO.</string>
+    <string name="desc_slide2">Além de muito rápidas, as trasações CCC usando SwiftX possuem um tempo de espera de confirmação iguais a ZERO.</string>
     <string name="title_slide3">Extramamente seguro e privado</string>
-    <string name="desc_slide3">PIVX está apontando para o estabelecimento da primeira cripto moeda verdadeiramente anônima.</string>
+    <string name="desc_slide3">CCC está apontando para o estabelecimento da primeira cripto moeda verdadeiramente anônima.</string>
     <string name="title_slide4">Associação de nós confiáveis</string>
     <string name="desc_slide4">A associação de nós confiáveis tornam possíveis as carteiras PoS, você pode contar com essa associação ou criar seu própio nó confiável!</string>
     <string name="option_add_node">Adicionar nó</string>
@@ -142,7 +142,7 @@ de código aberto, descentralizada e de alta privacidade, dirigida por uma comun
     <string name="restore_dialog_tag">restaurar etiqueta de diálogo</string>
     <string name="restore_dialog_error">restaurar diálogo de erro</string>
     <string name="settings_support">Suporte</string>
-    <string name="support_subject">Suporte da carteira PIVX</string>
+    <string name="support_subject">Suporte da carteira CCC</string>
     <string name="tutorial">Tutorial</string>
     <string name="copy">Copiar</string>
     <string name="share">Compartilhar</string>

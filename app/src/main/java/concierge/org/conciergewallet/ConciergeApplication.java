@@ -37,13 +37,13 @@ import global.utils.Io;
 import pivtrum.NetworkConf;
 import pivtrum.PivtrumPeerData;
 import concierge.org.conciergewallet.contacts.ContactsStore;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.module.wallet.WalletBackupHelper;
-import global.PivxModule;
-import global.PivxModuleImp;
+import global.ConciergeModule;
+import global.ConciergeModuleImp;
 import concierge.org.conciergewallet.module.WalletConfImp;
 import concierge.org.conciergewallet.rate.db.RateDb;
-import concierge.org.conciergewallet.service.PivxWalletService;
+import concierge.org.conciergewallet.service.ConciergeWalletService;
 import concierge.org.conciergewallet.utils.AppConf;
 import concierge.org.conciergewallet.utils.CentralFormats;
 import concierge.org.conciergewallet.utils.CrashReporter;
@@ -55,19 +55,19 @@ import static concierge.org.conciergewallet.utils.AndroidUtils.shareText;
  * Created by mati on 18/04/17.
  */
 @ReportsCrashes(
-        mailTo = PivxContext.REPORT_EMAIL, // my email here
+        mailTo = ConciergeContext.REPORT_EMAIL, // my email here
         mode = ReportingInteractionMode.TOAST,
         resToastText = R.string.crash_toast_text)
-public class PivxApplication extends Application implements ContextWrapper {
+public class ConciergeApplication extends Application implements ContextWrapper {
 
     private static Logger log;
 
     /** Singleton */
-    private static PivxApplication instance;
+    private static ConciergeApplication instance;
     public static final long TIME_CREATE_APPLICATION = System.currentTimeMillis();
     private long lastTimeRequestBackup;
 
-    private PivxModule conciergeModule;
+    private ConciergeModule conciergeModule;
     private AppConf appConf;
     private NetworkConf networkConf;
 
@@ -76,7 +76,7 @@ public class PivxApplication extends Application implements ContextWrapper {
     private ActivityManager activityManager;
     private PackageInfo info;
 
-    public static PivxApplication getInstance() {
+    public static ConciergeApplication getInstance() {
         return instance;
     }
 
@@ -115,7 +115,7 @@ public class PivxApplication extends Application implements ContextWrapper {
             } catch (final IOException x) {
                 log.info("problem writing attachment", x);
             }
-            shareText(PivxApplication.this,"Concierge wallet crash", "Unexpected crash", attachments);
+            shareText(ConciergeApplication.this,"Concierge wallet crash", "Unexpected crash", attachments);
         }
     };
 
@@ -125,7 +125,7 @@ public class PivxApplication extends Application implements ContextWrapper {
         instance = this;
         try {
             initLogging();
-            log = LoggerFactory.getLogger(PivxApplication.class);
+            log = LoggerFactory.getLogger(ConciergeApplication.class);
             PackageManager manager = getPackageManager();
             info = manager.getPackageInfo(this.getPackageName(), 0);
             activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -147,7 +147,7 @@ public class PivxApplication extends Application implements ContextWrapper {
             //walletConfiguration.saveTrustedNode(HardcodedConstants.TESTNET_HOST,0);
             //AddressStore addressStore = new SnappyStore(getDirPrivateMode("address_store").getAbsolutePath());
             ContactsStore contactsStore = new ContactsStore(this);
-            conciergeModule = new PivxModuleImp(this, walletConfiguration,contactsStore,new RateDb(this),new WalletBackupHelper());
+            conciergeModule = new ConciergeModuleImp(this, walletConfiguration,contactsStore,new RateDb(this),new WalletBackupHelper());
             conciergeModule.start();
 
         } catch (Exception e){
@@ -155,8 +155,8 @@ public class PivxApplication extends Application implements ContextWrapper {
         }
     }
 
-    public void startPivxService() {
-        Intent intent = new Intent(this,PivxWalletService.class);
+    public void startConciergeService() {
+        Intent intent = new Intent(this,ConciergeWalletService.class);
         startService(intent);
     }
 
@@ -207,7 +207,7 @@ public class PivxApplication extends Application implements ContextWrapper {
         log.setLevel(Level.INFO);
     }
 
-    public PivxModule getModule(){
+    public ConciergeModule getModule(){
         return conciergeModule;
     }
 
@@ -243,7 +243,7 @@ public class PivxApplication extends Application implements ContextWrapper {
 
     @Override
     public void stopBlockchain() {
-        Intent intent = new Intent(this,PivxWalletService.class);
+        Intent intent = new Intent(this,ConciergeWalletService.class);
         intent.setAction(ACTION_RESET_BLOCKCHAIN);
         startService(intent);
     }

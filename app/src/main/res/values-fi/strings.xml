@@ -11,7 +11,7 @@
         <item>Uranus</item>
         <item>Neptunus</item>
     </string-array>
-    <string name="app_name">PIVX lompakko</string>
+    <string name="app_name">CCC lompakko</string>
     <string name="btn_create_wallet">Luo Lompakko</string>
     <string name="btn_restore_wallet">Palauta Lompakko</string>
     <string name="restore_wallet_message">Valitse varmuuskopio lompakosta \n tallennusvälineeltä</string>
@@ -110,9 +110,9 @@
     <string name="title_slide1">Concierge on turvallinen</string>
     <string name="desc_slide1">Ensimmäinen kolikko, jossa on BIP38 yksityisavainten salaus/avaus</string>
     <string name="title_slide2">60 SEKUNNIN LOHKO AIKA</string>
-    <string name="desc_slide2">Jo valmiiksi erittäin nopea, PIVX rahansiirrot käyttäen SwiftTX:ää ovat välittömiä, nolla vahvistusta odotusaikaa.</string>
+    <string name="desc_slide2">Jo valmiiksi erittäin nopea, CCC rahansiirrot käyttäen SwiftTX:ää ovat välittömiä, nolla vahvistusta odotusaikaa.</string>
     <string name="title_slide3">Erittäin turvallinen ja yksityinen</string>
-    <string name="desc_slide3">PIVX:in tavoitteena on perustaa ensimmäinen aidosti anonyymi kryptovaluutta.</string>
+    <string name="desc_slide3">CCC:in tavoitteena on perustaa ensimmäinen aidosti anonyymi kryptovaluutta.</string>
     <string name="title_slide4">Luotettujen solmujen liitto</string>
     <string name="desc_slide4">Luotettujen solmujen liitto tekevät kevyistä PoS-lompakoista mahdollisia, voit luottaa niihin tai luoda oman luotettavan solmun!</string>
     <string name="option_add_node">Lisää solmu</string>
@@ -133,7 +133,7 @@
     <string name="restore_dialog_tag">palauta dialogitunniste</string>
     <string name="restore_dialog_error">palauta dialogin virhe</string>
     <string name="settings_support">Tuki</string>
-    <string name="support_subject">PIVX lompakon tuki</string>
+    <string name="support_subject">CCC lompakon tuki</string>
     <string name="tutorial">Kurssi</string>
     <string name="copy">Kopioi</string>
     <string name="share">Jaa</string>

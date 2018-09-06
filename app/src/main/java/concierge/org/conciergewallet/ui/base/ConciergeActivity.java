@@ -9,9 +9,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 
-import concierge.org.conciergewallet.PivxApplication;
+import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
-import global.PivxModule;
+import global.ConciergeModule;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.utils.DialogsUtil;
 
@@ -22,10 +22,10 @@ import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_TRUS
  * Created by furszy on 6/8/17.
  */
 
-public class PivxActivity extends AppCompatActivity {
+public class ConciergeActivity extends AppCompatActivity {
 
-    protected PivxApplication conciergeApplication;
-    protected PivxModule conciergeModule;
+    protected ConciergeApplication conciergeApplication;
+    protected ConciergeModule conciergeModule;
 
     protected LocalBroadcastManager localBroadcastManager;
     private static final IntentFilter intentFilter = new IntentFilter(ACTION_TRUSTED_PEER_CONNECTION_FAIL);
@@ -50,7 +50,7 @@ public class PivxActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        conciergeApplication = PivxApplication.getInstance();
+        conciergeApplication = ConciergeApplication.getInstance();
         conciergeModule = conciergeApplication.getModule();
         localBroadcastManager = LocalBroadcastManager.getInstance(this);
     }

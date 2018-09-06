@@ -16,7 +16,7 @@ import com.google.zxing.WriterException;
 import org.conciergej.crypto.DeterministicKey;
 
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.utils.AndroidUtils;
 import concierge.org.conciergewallet.utils.CrashReporter;
@@ -60,7 +60,7 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
 
     private void initValues() throws WriterException {
         DeterministicKey deterministicKey = conciergeModule.getWatchingKey();
-        xpubKey = deterministicKey.serializePubB58(PivxContext.NETWORK_PARAMETERS);
+        xpubKey = deterministicKey.serializePubB58(ConciergeContext.NETWORK_PARAMETERS);
         txt_title.setText(R.string.public_key);
         txt_key.setText(xpubKey);
         txt_key.setOnClickListener(this);

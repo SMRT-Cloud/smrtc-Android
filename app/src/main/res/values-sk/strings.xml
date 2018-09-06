@@ -11,7 +11,7 @@
         <item>Uran</item>
         <item>Neptun</item>
     </string-array>
-    <string name="app_name">PIVX Peňaženka</string>
+    <string name="app_name">CCC Peňaženka</string>
     <string name="btn_create_wallet">Vytvoriť Peňaženku</string>
     <string name="btn_restore_wallet">Obnoviť Peňaženku</string>
     <string name="restore_wallet_message">Vybrať zálohu peňaženky \n z úložiska</string>
@@ -110,9 +110,9 @@
     <string name="title_slide1">Concierge je zabezpečený</string>
     <string name="desc_slide1">Prvá mena s BIP38 šifrovaním a dešifrovaním Privátnych Kľúčov</string>
     <string name="title_slide2">60 SEKUND PRE SPRACOVANIE BLOKU</string>
-    <string name="desc_slide2">Veľmi rýchlé, PIVX transakcie využívajú SwiftX sú prevedené ihneď s NULOVÝM časom potrebným na potvrdenie.</string>
+    <string name="desc_slide2">Veľmi rýchlé, CCC transakcie využívajú SwiftX sú prevedené ihneď s NULOVÝM časom potrebným na potvrdenie.</string>
     <string name="title_slide3">Mimoriadne zabezpečená a privátna</string>
-    <string name="desc_slide3">PIVX mieri za cieľom vytvoriť prvú naozaj anonymnú kryptomenu.</string>
+    <string name="desc_slide3">CCC mieri za cieľom vytvoriť prvú naozaj anonymnú kryptomenu.</string>
     <string name="title_slide4">Federácia dôveryhodných uzlov</string>
     <string name="desc_slide4">Federácia dôveryhodných uzlov umožnila tvorbu ľahkého klienta, peňaženky, pre PoS, môžete sa spoľahnúť na ich dôveryhodnosť alebo vytvoriť vlastný dôveryhodný uzol! </string>
     <string name="option_add_node">Pridať uzol</string>
@@ -133,7 +133,7 @@
     <string name="restore_dialog_tag">obnoviť dialog tag</string>
     <string name="restore_dialog_error">obnoviť dialog chyba</string>
     <string name="settings_support">Podpora</string>
-    <string name="support_subject">Podpora PIVX peňaženky</string>
+    <string name="support_subject">Podpora CCC peňaženky</string>
     <string name="tutorial">Tutorial</string>
     <string name="copy">Kopírovať</string>
     <string name="share">Zdielať</string>

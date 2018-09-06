@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.conciergej.core.AddressFormatException;
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 
 import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
@@ -157,7 +157,7 @@ public class ChangeAddressActivity extends BaseActivity {
                     if (conciergeModule.chechAddress(address)){
                         usedAddress = address;
                     }else {
-                        PivxURI conciergeUri = new PivxURI(address);
+                        ConciergeURI conciergeUri = new ConciergeURI(address);
                         usedAddress = conciergeUri.getAddress().toBase58();
                     }
                     edit_address.setText(usedAddress);

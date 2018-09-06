@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.DialogListener;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
@@ -114,7 +114,7 @@ public class RestoreActivity extends BaseActivity {
             @Override
             public View getDropDownView(int position, View row, ViewGroup parent) {
                 final File file = getItem(position);
-                final boolean isExternal = PivxContext.Files.EXTERNAL_WALLET_BACKUP_DIR.equals(file.getParentFile());
+                final boolean isExternal = ConciergeContext.Files.EXTERNAL_WALLET_BACKUP_DIR.equals(file.getParentFile());
                 final boolean isEncrypted = Crypto.OPENSSL_FILE_FILTER.accept(file);
 
                 if (row == null)
@@ -140,8 +140,8 @@ public class RestoreActivity extends BaseActivity {
             }
         };
         final String path;
-        final String backupPath = PivxContext.Files.EXTERNAL_WALLET_BACKUP_DIR.getAbsolutePath();
-        final String storagePath = PivxContext.Files.EXTERNAL_STORAGE_DIR.getAbsolutePath();
+        final String backupPath = ConciergeContext.Files.EXTERNAL_WALLET_BACKUP_DIR.getAbsolutePath();
+        final String storagePath = ConciergeContext.Files.EXTERNAL_STORAGE_DIR.getAbsolutePath();
         if (backupPath.startsWith(storagePath))
             path = backupPath.substring(storagePath.length());
         else
@@ -169,7 +169,7 @@ public class RestoreActivity extends BaseActivity {
                 @Override
                 public void run() {
                     try {
-                        org.conciergej.core.Context.propagate(PivxContext.CONTEXT);
+                        org.conciergej.core.Context.propagate(ConciergeContext.CONTEXT);
                         File file = (File) spinnerFiles.getSelectedItem();
                         if (WalletUtils.BACKUP_FILE_FILTER.accept(file)) {
                             conciergeModule.restoreWallet(file);
@@ -266,7 +266,7 @@ public class RestoreActivity extends BaseActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            conciergeApplication.startPivxService();
+                            conciergeApplication.startConciergeService();
                         }
                     }, TimeUnit.SECONDS.toMillis(5));
                 }
@@ -279,8 +279,8 @@ public class RestoreActivity extends BaseActivity {
         files.clear();
 
         // external storage
-        if (PivxContext.Files.EXTERNAL_WALLET_BACKUP_DIR.exists() && PivxContext.Files.EXTERNAL_WALLET_BACKUP_DIR.isDirectory()) {
-            File[] fileArray = PivxContext.Files.EXTERNAL_WALLET_BACKUP_DIR.listFiles();
+        if (ConciergeContext.Files.EXTERNAL_WALLET_BACKUP_DIR.exists() && ConciergeContext.Files.EXTERNAL_WALLET_BACKUP_DIR.isDirectory()) {
+            File[] fileArray = ConciergeContext.Files.EXTERNAL_WALLET_BACKUP_DIR.listFiles();
             if (fileArray!=null) {
                 for (final File file : fileArray)
                     if (Crypto.OPENSSL_FILE_FILTER.accept(file))
@@ -289,7 +289,7 @@ public class RestoreActivity extends BaseActivity {
         }
         // internal storage
         for (final String filename : fileList())
-            if (filename.startsWith(PivxContext.Files.WALLET_KEY_BACKUP_PROTOBUF + '.'))
+            if (filename.startsWith(ConciergeContext.Files.WALLET_KEY_BACKUP_PROTOBUF + '.'))
                 files.add(new File(getFilesDir(), filename));
 
         // sort
@@ -373,7 +373,7 @@ public class RestoreActivity extends BaseActivity {
             try {
                 if (file==null)return false;
                 reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), Charsets.UTF_8));
-                WalletUtils.readKeys(reader, PivxContext.NETWORK_PARAMETERS,PivxContext.BACKUP_MAX_CHARS);
+                WalletUtils.readKeys(reader, ConciergeContext.NETWORK_PARAMETERS,ConciergeContext.BACKUP_MAX_CHARS);
                 return true;
             } catch (final IOException x) {
                 return false;

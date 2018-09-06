@@ -8,14 +8,14 @@ import org.conciergej.core.NetworkParameters;
 import global.WalletConfiguration;
 import concierge.org.conciergewallet.utils.Configurations;
 
-import static concierge.org.conciergewallet.module.PivxContext.CONTEXT;
-import static concierge.org.conciergewallet.module.PivxContext.Files.BLOCKCHAIN_FILENAME;
-import static concierge.org.conciergewallet.module.PivxContext.Files.CHECKPOINTS_FILENAME;
-import static concierge.org.conciergewallet.module.PivxContext.Files.WALLET_FILENAME_PROTOBUF;
-import static concierge.org.conciergewallet.module.PivxContext.Files.WALLET_KEY_BACKUP_PROTOBUF;
-import static concierge.org.conciergewallet.module.PivxContext.NETWORK_PARAMETERS;
-import static concierge.org.conciergewallet.module.PivxContext.PEER_DISCOVERY_TIMEOUT_MS;
-import static concierge.org.conciergewallet.module.PivxContext.PEER_TIMEOUT_MS;
+import static concierge.org.conciergewallet.module.ConciergeContext.CONTEXT;
+import static concierge.org.conciergewallet.module.ConciergeContext.Files.BLOCKCHAIN_FILENAME;
+import static concierge.org.conciergewallet.module.ConciergeContext.Files.CHECKPOINTS_FILENAME;
+import static concierge.org.conciergewallet.module.ConciergeContext.Files.WALLET_FILENAME_PROTOBUF;
+import static concierge.org.conciergewallet.module.ConciergeContext.Files.WALLET_KEY_BACKUP_PROTOBUF;
+import static concierge.org.conciergewallet.module.ConciergeContext.NETWORK_PARAMETERS;
+import static concierge.org.conciergewallet.module.ConciergeContext.PEER_DISCOVERY_TIMEOUT_MS;
+import static concierge.org.conciergewallet.module.ConciergeContext.PEER_TIMEOUT_MS;
 
 /**
  * Created by furszy on 6/4/17.
@@ -54,12 +54,12 @@ public class WalletConfImp extends Configurations implements WalletConfiguration
 
     @Override
     public int getTrustedNodePort() {
-        return PivxContext.NETWORK_PARAMETERS.getPort();
+        return ConciergeContext.NETWORK_PARAMETERS.getPort();
     }
 
     @Override
     public String getMnemonicFilename() {
-        return PivxContext.Files.BIP39_WORDLIST_FILENAME;
+        return ConciergeContext.Files.BIP39_WORDLIST_FILENAME;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class WalletConfImp extends Configurations implements WalletConfiguration
 
     @Override
     public NetworkParameters getNetworkParams() {
-        return PivxContext.NETWORK_PARAMETERS;
+        return ConciergeContext.NETWORK_PARAMETERS;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class WalletConfImp extends Configurations implements WalletConfiguration
 
     @Override
     public long getWalletAutosaveDelayMs() {
-        return PivxContext.Files.WALLET_AUTOSAVE_DELAY_MS;
+        return ConciergeContext.Files.WALLET_AUTOSAVE_DELAY_MS;
     }
 
     @Override
@@ -109,17 +109,17 @@ public class WalletConfImp extends Configurations implements WalletConfiguration
 
     @Override
     public int getMinMemoryNeeded() {
-        return PivxContext.MEMORY_CLASS_LOWEND;
+        return ConciergeContext.MEMORY_CLASS_LOWEND;
     }
 
     @Override
     public long getBackupMaxChars() {
-        return PivxContext.BACKUP_MAX_CHARS;
+        return ConciergeContext.BACKUP_MAX_CHARS;
     }
 
     @Override
     public boolean isTest() {
-        return PivxContext.IS_TEST;
+        return ConciergeContext.IS_TEST;
     }
 
     @Override

@@ -11,7 +11,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import concierge.org.conciergewallet.R;
-import global.PivxRate;
+import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.base.BaseRecyclerFragment;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerAdapter;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
@@ -21,7 +21,7 @@ import concierge.org.conciergewallet.ui.base.tools.adapter.ListItemListeners;
  * Created by furszy on 7/2/17.
  */
 
-public class RatesFragment extends BaseRecyclerFragment<PivxRate> implements ListItemListeners<PivxRate> {
+public class RatesFragment extends BaseRecyclerFragment<ConciergeRate> implements ListItemListeners<ConciergeRate> {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,16 +32,16 @@ public class RatesFragment extends BaseRecyclerFragment<PivxRate> implements Lis
     }
 
     @Override
-    protected List<PivxRate> onLoading() {
+    protected List<ConciergeRate> onLoading() {
         return conciergeModule.listRates();
     }
 
     @Override
-    protected BaseRecyclerAdapter<PivxRate, ? extends PivxRateHolder> initAdapter() {
-        BaseRecyclerAdapter<PivxRate, PivxRateHolder> adapter = new BaseRecyclerAdapter<PivxRate, PivxRateHolder>(getActivity()) {
+    protected BaseRecyclerAdapter<ConciergeRate, ? extends ConciergeRateHolder> initAdapter() {
+        BaseRecyclerAdapter<ConciergeRate, ConciergeRateHolder> adapter = new BaseRecyclerAdapter<ConciergeRate, ConciergeRateHolder>(getActivity()) {
             @Override
-            protected PivxRateHolder createHolder(View itemView, int type) {
-                return new PivxRateHolder(itemView,type);
+            protected ConciergeRateHolder createHolder(View itemView, int type) {
+                return new ConciergeRateHolder(itemView,type);
             }
 
             @Override
@@ -50,7 +50,7 @@ public class RatesFragment extends BaseRecyclerFragment<PivxRate> implements Lis
             }
 
             @Override
-            protected void bindHolder(PivxRateHolder holder, PivxRate data, int position) {
+            protected void bindHolder(ConciergeRateHolder holder, ConciergeRate data, int position) {
                 holder.txt_name.setText(data.getCode());
                 if (list.get(0).getCode().equals(data.getCode()))
                     holder.view_line.setVisibility(View.GONE);
@@ -61,23 +61,23 @@ public class RatesFragment extends BaseRecyclerFragment<PivxRate> implements Lis
     }
 
     @Override
-    public void onItemClickListener(PivxRate data, int position) {
+    public void onItemClickListener(ConciergeRate data, int position) {
         conciergeApplication.getAppConf().setSelectedRateCoin(data.getCode());
         Toast.makeText(getActivity(),R.string.rate_selected,Toast.LENGTH_SHORT).show();
         getActivity().onBackPressed();
     }
 
     @Override
-    public void onLongItemClickListener(PivxRate data, int position) {
+    public void onLongItemClickListener(ConciergeRate data, int position) {
 
     }
 
-    private  class PivxRateHolder extends BaseRecyclerViewHolder{
+    private  class ConciergeRateHolder extends BaseRecyclerViewHolder{
 
         private TextView txt_name;
         private View view_line;
 
-        protected PivxRateHolder(View itemView, int holderType) {
+        protected ConciergeRateHolder(View itemView, int holderType) {
             super(itemView, holderType);
             txt_name = (TextView) itemView.findViewById(R.id.txt_name);
             view_line = itemView.findViewById(R.id.view_line);

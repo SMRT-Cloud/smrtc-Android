@@ -20,11 +20,11 @@ import android.widget.Toast;
 import com.google.zxing.WriterException;
 
 import org.conciergej.core.Address;
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 
-import concierge.org.conciergewallet.PivxApplication;
+import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
-import global.PivxModule;
+import global.ConciergeModule;
 
 import static android.graphics.Color.WHITE;
 import static concierge.org.conciergewallet.utils.AndroidUtils.copyToClipboard;
@@ -36,7 +36,7 @@ import static concierge.org.conciergewallet.utils.QrUtils.encodeAsBitmap;
 
 public class MyAddressFragment extends Fragment implements View.OnClickListener {
 
-    private PivxModule module;
+    private ConciergeModule module;
 
     private View root;
     private TextView txt_address;
@@ -46,7 +46,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
 
     private Address address;
 
-    public static MyAddressFragment newInstance(PivxModule conciergeModule) {
+    public static MyAddressFragment newInstance(ConciergeModule conciergeModule) {
         MyAddressFragment f = new MyAddressFragment();
         f.setModule(conciergeModule);
         return f;
@@ -55,7 +55,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        module = PivxApplication.getInstance().getModule();
+        module = ConciergeApplication.getInstance().getModule();
         root = inflater.inflate(R.layout.my_address,null);
         txt_address = (TextView) root.findViewById(R.id.txt_address);
         btn_share = (Button) root.findViewById(R.id.btn_share);
@@ -80,7 +80,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
                 flag = true;
             }
             if (flag) {
-                String conciergeUri = PivxURI.convertToBitcoinURI(address,null,"Receive address",null);
+                String conciergeUri = ConciergeURI.convertToBitcoinURI(address,null,"Receive address",null);
                 loadAddress(conciergeUri,address.toBase58());
             }
         }catch (WriterException e){
@@ -91,7 +91,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
         }
 
     }
-    public void setModule(PivxModule module) {
+    public void setModule(ConciergeModule module) {
         this.module = module;
     }
 

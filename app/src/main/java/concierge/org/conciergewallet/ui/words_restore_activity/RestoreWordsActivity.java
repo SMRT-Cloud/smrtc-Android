@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTwoButtonsDialog;
 import concierge.org.conciergewallet.ui.transaction_send_activity.MyFilterableAdapter;
@@ -42,7 +42,7 @@ import concierge.org.conciergewallet.utils.AnimationUtils;
 import concierge.org.conciergewallet.utils.CrashReporter;
 import concierge.org.conciergewallet.utils.DialogsUtil;
 
-import static concierge.org.conciergewallet.module.PivxContext.PIVX_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME;
+import static concierge.org.conciergewallet.module.ConciergeContext.Concierge_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME;
 
 /**
  * Created by Neoperol on 7/19/17.
@@ -219,7 +219,7 @@ public class RestoreWordsActivity extends BaseActivity {
 
                                             boolean isBip32 = check_bip32.isChecked();
 
-                                            conciergeModule.restoreWallet(mnemonic, PIVX_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME,!isBip32);
+                                            conciergeModule.restoreWallet(mnemonic, Concierge_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME,!isBip32);
 
                                             message = getString(R.string.restore_mnemonic);
                                             result = true;
@@ -381,7 +381,7 @@ public class RestoreWordsActivity extends BaseActivity {
                 init(txtWord17,txtWord18,txtWord19,txtWord20,txtWord21,txtWord22,txtWord23,txtWord24);
                 txt_bip32_message = (TextView) root.findViewById(R.id.txt_bip32_message);
                 check_bip32 = (CheckBox) root.findViewById(R.id.check_bip32);
-                txt_bip32_message.setText(getString(R.string.restore_bip32_warning, PivxContext.ENABLE_BIP44_APP_VERSION));
+                txt_bip32_message.setText(getString(R.string.restore_bip32_warning, ConciergeContext.ENABLE_BIP44_APP_VERSION));
 
             }
 

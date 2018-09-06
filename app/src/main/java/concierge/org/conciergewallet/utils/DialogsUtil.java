@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import global.PivtrumGlobalData;
 import pivtrum.PivtrumPeerData;
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.ui.address_add_activity.AddContactActivity;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTwoButtonsDialog;
@@ -114,7 +114,7 @@ public class DialogsUtil {
                     final String host = editHost.getText().toString();
                     final String tcpPortStr = editTcp.getText().toString();
                     final String sslPortStr = editSsl.getText().toString();
-                    int tcpPort = PivxContext.NETWORK_PARAMETERS.getPort();
+                    int tcpPort = ConciergeContext.NETWORK_PARAMETERS.getPort();
                     if (host.equals(PivtrumGlobalData.FURSZY_TESTNET_SERVER)){
                         tcpPort = 8443;
                     }

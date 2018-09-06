@@ -26,9 +26,9 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
-import global.PivxModuleImp;
+import global.ConciergeModuleImp;
 import global.utils.Io;
-import concierge.org.conciergewallet.PivxApplication;
+import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.utils.CrashReporter;
 
@@ -54,11 +54,11 @@ public class CrashPopupActivity extends AppCompatActivity implements View.OnClic
     private TextView txt_send;
     private TextView txt_cancel;
 
-    private PivxApplication conciergeApplication;
+    private ConciergeApplication conciergeApplication;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        conciergeApplication = PivxApplication.getInstance();
+        conciergeApplication = ConciergeApplication.getInstance();
         setTheme(R.style.AppTheme_Dialog);
         setContentView(R.layout.report_issue_activity_dialog);
         this.setFinishOnTouchOutside(false);
@@ -249,6 +249,6 @@ public class CrashPopupActivity extends AppCompatActivity implements View.OnClic
 
     @Nullable
     protected CharSequence collectWalletDump() throws IOException{
-        return ((PivxModuleImp)conciergeApplication.getModule()).getWallet().toString(false,true,true,null);
+        return ((ConciergeModuleImp)conciergeApplication.getModule()).getWallet().toString(false,true,true,null);
     }
 }

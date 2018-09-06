@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.module.wallet.WalletBackupHelper;
 import concierge.org.conciergewallet.ui.backup_mnemonic_activity.MnemonicActivity;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
@@ -66,7 +66,7 @@ public class SettingsBackupActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                org.conciergej.core.Context.propagate(PivxContext.CONTEXT);
+                org.conciergej.core.Context.propagate(ConciergeContext.CONTEXT);
                 backup();
                 runOnUiThread(new Runnable() {
                     @Override

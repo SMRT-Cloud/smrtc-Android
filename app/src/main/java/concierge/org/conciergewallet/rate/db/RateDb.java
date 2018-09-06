@@ -8,14 +8,14 @@ import android.database.sqlite.SQLiteDatabase;
 import java.math.BigDecimal;
 
 import concierge.org.conciergewallet.contacts.AbstractSqliteDb;
-import global.PivxRate;
+import global.ConciergeRate;
 import global.store.RateDbDao;
 
 /**
  * Created by furszy on 7/5/17.
  */
 
-public class RateDb extends AbstractSqliteDb<PivxRate> implements RateDbDao<PivxRate> {
+public class RateDb extends AbstractSqliteDb<ConciergeRate> implements RateDbDao<ConciergeRate> {
 
 
     private static final String DATABASE_NAME = "Rates";
@@ -66,7 +66,7 @@ public class RateDb extends AbstractSqliteDb<PivxRate> implements RateDbDao<Pivx
     }
 
     @Override
-    protected ContentValues buildContent(PivxRate obj) {
+    protected ContentValues buildContent(ConciergeRate obj) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_COIN,obj.getCode());
         contentValues.put(KEY_VALUE,obj.getRate().toEngineeringString());
@@ -76,19 +76,19 @@ public class RateDb extends AbstractSqliteDb<PivxRate> implements RateDbDao<Pivx
     }
 
     @Override
-    protected PivxRate buildFrom(Cursor cursor) {
+    protected ConciergeRate buildFrom(Cursor cursor) {
         String coin = cursor.getString(KEY_POS_COIN);
         BigDecimal value = new BigDecimal(cursor.getString(KEY_POS_VALUE));
         long timestap = cursor.getLong(KEY_POS_TIMESTAMP);
-        return new PivxRate(coin,value,timestap);
+        return new ConciergeRate(coin,value,timestap);
     }
 
-    public PivxRate getRate(String coin){
+    public ConciergeRate getRate(String coin){
         return get(KEY_COIN,coin);
     }
 
 
-    public void insertOrUpdateIfExist(PivxRate conciergeRate) {
+    public void insertOrUpdateIfExist(ConciergeRate conciergeRate) {
         if (getRate(conciergeRate.getCode())==null){
             insert(conciergeRate);
         }else {

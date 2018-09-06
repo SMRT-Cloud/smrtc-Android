@@ -18,7 +18,7 @@ import org.conciergej.core.Coin;
 import java.math.BigDecimal;
 
 import concierge.org.conciergewallet.R;
-import global.PivxRate;
+import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.base.BaseFragment;
 
 /**
@@ -33,7 +33,7 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
     private TextView txt_currency_amount, txtShowPiv,txt_local_currency;
     private ImageButton btnSwap;
     private ViewFlipper amountSwap;
-    private PivxRate conciergeRate;
+    private ConciergeRate conciergeRate;
     private boolean inCCC = true;
 
     @Nullable

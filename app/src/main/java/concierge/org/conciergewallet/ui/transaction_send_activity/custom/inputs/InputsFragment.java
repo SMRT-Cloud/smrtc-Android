@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Set;
 
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
+import concierge.org.conciergewallet.module.ConciergeContext;
 import concierge.org.conciergewallet.ui.base.BaseRecyclerFragment;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerAdapter;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
@@ -179,7 +179,7 @@ public class InputsFragment extends BaseRecyclerFragment<InputsFragment.InputSel
 
                     data.setSelected(found);
 
-                    inputHolder.txt_address.setText(data.getInputWrapper().getLabel(PivxContext.NETWORK_PARAMETERS));
+                    inputHolder.txt_address.setText(data.getInputWrapper().getLabel(ConciergeContext.NETWORK_PARAMETERS));
                     inputHolder.txt_amount.setText(data.getInputWrapper().getUnspent().getValue().toFriendlyString());
                     inputHolder.txt_confirmations_amount.setText(data.getInputWrapper().getUnspent().getParentTransactionDepthInBlocks()+" "+getString(R.string.confimations));
                     inputHolder.txt_date.setText(simpleDateFormat.format(data.getInputWrapper().getUnspent().getParentTransaction().getUpdateTime()));

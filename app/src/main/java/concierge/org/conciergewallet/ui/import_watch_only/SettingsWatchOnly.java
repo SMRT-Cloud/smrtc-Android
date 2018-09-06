@@ -64,7 +64,7 @@ public class SettingsWatchOnly extends BaseActivity {
             try {
                 conciergeModule.watchOnlyMode(
                         xpub,
-                        isBip32 ? DeterministicKeyChain.KeyChainType.BIP32: DeterministicKeyChain.KeyChainType.BIP44_PIVX_ONLY
+                        isBip32 ? DeterministicKeyChain.KeyChainType.BIP32: DeterministicKeyChain.KeyChainType.BIP44_CCC_ONLY
                 );
                 SimpleTextDialog simpleTextDialog = DialogsUtil.buildSimpleTextDialog(
                         this,

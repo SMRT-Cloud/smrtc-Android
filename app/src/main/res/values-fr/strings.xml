@@ -11,7 +11,7 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
-    <string name="app_name">portefeuille PIVX</string>
+    <string name="app_name">portefeuille CCC</string>
     <string name="btn_create_wallet">Créer un portefeuille</string>
     <string name="btn_restore_wallet">Récupérer un portefeuille </string>
     <string name="restore_wallet_message">Sélectionner une sauvegarde de portefeuille /n depuis un périphérique de sockage</string>
@@ -100,9 +100,9 @@
     <string name="title_slide1">Concierge est sécurisé</string>
     <string name="desc_slide1">Première cryptomonnaie qui utilise le chiffrement BIP38 pour les clés privées.</string>
     <string name="title_slide2">Temps de bloc de 60 secondes</string>
-    <string name="desc_slide2">Déjà très rapide, les transactions PIVX utilisant SwiftX sont instantanée avec ZERO temps de confirmation requis.</string>
+    <string name="desc_slide2">Déjà très rapide, les transactions CCC utilisant SwiftX sont instantanée avec ZERO temps de confirmation requis.</string>
     <string name="title_slide3">Extrêmement sécurisé et privé</string>
-    <string name="desc_slide3">PIVX vise à établir la première cryptomonnaie vraiment anonyme.</string>
+    <string name="desc_slide3">CCC vise à établir la première cryptomonnaie vraiment anonyme.</string>
     <string name="option_add_node">Ajouter un nœud </string>
     <string name="report_issue_dialog_description">Description du problème</string>
     <string name="report_issue_dialog_report">Rapport</string>

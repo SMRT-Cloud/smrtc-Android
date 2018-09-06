@@ -14,11 +14,11 @@ import java.io.File;
  * Created by furszy on 6/4/17.
  */
 
-public class PivxContext {
+public class ConciergeContext {
 
     public static final boolean IS_TEST = false;
     public static final NetworkParameters NETWORK_PARAMETERS = IS_TEST? TestNet3Params.get():MainNetParams.get();
-    /** Pivxj global context. */
+    /** Conciergej global context. */
     public static final Context CONTEXT = new Context(NETWORK_PARAMETERS);
 
     public static final String DEFAULT_RATE_COIN = "USD";
@@ -27,13 +27,13 @@ public class PivxContext {
     public static final String ENABLE_BIP44_APP_VERSION = "1.03";
 
     /** Concierge wallet released time */
-    public static final long PIVX_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME = 1500940800;
+    public static final long Concierge_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME = 1500940800;
 
     /** Currency exchange rate */
     public static final String URL_FIAT_CURRENCIES_RATE = "https://bitpay.com/rates";
 
     // report mail
-    public static final String REPORT_EMAIL = "matiasfurszyfer@gmail.com";
+    public static final String REPORT_EMAIL = "akshaycm@hotmail.com";
     /** Subject line for manually reported issues. */
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 

@@ -47,19 +47,19 @@ import chain.BlockchainManager;
 import chain.BlockchainState;
 import chain.Impediment;
 import pivtrum.listeners.AddressListener;
-import concierge.org.conciergewallet.PivxApplication;
+import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
-import concierge.org.conciergewallet.module.PivxContext;
-import global.PivxModuleImp;
+import concierge.org.conciergewallet.module.ConciergeContext;
+import global.ConciergeModuleImp;
 import concierge.org.conciergewallet.module.store.SnappyBlockchainStore;
 import concierge.org.conciergewallet.rate.CoinMarketCapApiClient;
-import concierge.org.conciergewallet.rate.RequestPivxRateException;
-import global.PivxRate;
+import concierge.org.conciergewallet.rate.RequestConciergeRateException;
+import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.wallet_activity.WalletActivity;
 import concierge.org.conciergewallet.utils.AppConf;
 import concierge.org.conciergewallet.utils.CrashReporter;
 
-import static concierge.org.conciergewallet.module.PivxContext.CONTEXT;
+import static concierge.org.conciergewallet.module.ConciergeContext.CONTEXT;
 import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_ADDRESS_BALANCE_CHANGE;
 import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_BROADCAST_TRANSACTION;
 import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_CANCEL_COINS_RECEIVED;
@@ -79,12 +79,12 @@ import static concierge.org.conciergewallet.service.IntentsConstants.NOT_COINS_R
  * Created by furszy on 6/12/17.
  */
 
-public class PivxWalletService extends Service{
+public class ConciergeWalletService extends Service{
 
-    private Logger log = LoggerFactory.getLogger(PivxWalletService.class);
+    private Logger log = LoggerFactory.getLogger(ConciergeWalletService.class);
 
-    private PivxApplication conciergeApplication;
-    private PivxModuleImp module;
+    private ConciergeApplication conciergeApplication;
+    private ConciergeModuleImp module;
     //private PivtrumPeergroup pivtrumPeergroup;
     private BlockchainManager blockchainManager;
 
@@ -108,16 +108,16 @@ public class PivxWalletService extends Service{
     private volatile long lastUpdateTime = System.currentTimeMillis();
     private volatile long lastMessageTime = System.currentTimeMillis();
 
-    public class PivxBinder extends Binder {
-        public PivxWalletService getService() {
-            return PivxWalletService.this;
+    public class ConciergeBinder extends Binder {
+        public ConciergeWalletService getService() {
+            return ConciergeWalletService.this;
         }
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return new PivxBinder();
+        return new ConciergeBinder();
     }
 
     private AddressListener addressListener = new AddressListener() {
@@ -155,7 +155,7 @@ public class PivxWalletService extends Service{
             log.info("Peer: " + peer + ", Block: " + block + ", left: " + blocksLeft);*/
 
 
-            /*if (PivxContext.IS_TEST)
+            /*if (ConciergeContext.IS_TEST)
                 showBlockchainSyncNotification(blocksLeft);*/
 
                 //delayHandler.removeCallbacksAndMessages(null);
@@ -188,7 +188,7 @@ public class PivxWalletService extends Service{
 
         @Override
         public void run() {
-            org.conciergej.core.Context.propagate(PivxContext.CONTEXT);
+            org.conciergej.core.Context.propagate(ConciergeContext.CONTEXT);
             lastMessageTime = System.currentTimeMillis();
             broadcastBlockchainState(false);
         }
@@ -258,9 +258,9 @@ public class PivxWalletService extends Service{
                     notificationAccumulatedAmount = notificationAccumulatedAmount.add(amount);
                     Intent openIntent = new Intent(getApplicationContext(), WalletActivity.class);
                     openPendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, openIntent, 0);
-                    Intent resultIntent = new Intent(getApplicationContext(), PivxWalletService.this.getClass());
+                    Intent resultIntent = new Intent(getApplicationContext(), ConciergeWalletService.this.getClass());
                     resultIntent.setAction(ACTION_CANCEL_COINS_RECEIVED);
-                    deleteIntent = PendingIntent.getService(PivxWalletService.this, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+                    deleteIntent = PendingIntent.getService(ConciergeWalletService.this, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
                     mBuilder = new NotificationCompat.Builder(getApplicationContext())
                             .setContentTitle("CCC received!")
                             .setContentText("Coins received for a value of " + notificationAccumulatedAmount.toFriendlyString())
@@ -270,7 +270,7 @@ public class PivxWalletService extends Service{
                                     (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) ?
                                             getResources().getColor(R.color.bgPurple, null)
                                             :
-                                            ContextCompat.getColor(PivxWalletService.this, R.color.bgPurple))
+                                            ContextCompat.getColor(ConciergeWalletService.this, R.color.bgPurple))
                             .setDeleteIntent(deleteIntent)
                             .setContentIntent(openPendingIntent);
                     nm.notify(NOT_COINS_RECEIVED, mBuilder.build());
@@ -321,8 +321,8 @@ public class PivxWalletService extends Service{
             nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             broadcastManager = LocalBroadcastManager.getInstance(this);
             // Concierge
-            conciergeApplication = PivxApplication.getInstance();
-            module = (PivxModuleImp) conciergeApplication.getModule();
+            conciergeApplication = ConciergeApplication.getInstance();
+            module = (ConciergeModuleImp) conciergeApplication.getModule();
             blockchainManager = module.getBlockchainManager();
             // connect to pivtrum node
             /*pivtrumPeergroup = new PivtrumPeergroup(conciergeApplication.getNetworkConf());
@@ -335,9 +335,9 @@ public class PivxWalletService extends Service{
             peerConnectivityListener = new PeerConnectivityListener();
 
             File file = getDir("blockstore_v2",MODE_PRIVATE);
-            String filename = PivxContext.Files.BLOCKCHAIN_FILENAME;
+            String filename = ConciergeContext.Files.BLOCKCHAIN_FILENAME;
             boolean fileExists = new File(file,filename).exists();
-            blockchainStore = new SnappyBlockchainStore(PivxContext.CONTEXT,file,filename);
+            blockchainStore = new SnappyBlockchainStore(ConciergeContext.CONTEXT,file,filename);
             blockchainManager.init(
                     blockchainStore,
                     file,
@@ -459,7 +459,7 @@ public class PivxWalletService extends Service{
             AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
             long scheduleTime = System.currentTimeMillis() + 2000*60;//(1000 * 60 * 60); // One hour from now
 
-            Intent intent = new Intent(this, PivxWalletService.class);
+            Intent intent = new Intent(this, ConciergeWalletService.class);
             intent.setAction(ACTION_SCHEDULE_SERVICE);
             alarm.set(
                     // This alarm will wake up the device when System.currentTimeMillis()
@@ -482,33 +482,33 @@ public class PivxWalletService extends Service{
 
     private void requestRateCoin(){
         final AppConf appConf = conciergeApplication.getAppConf();
-        PivxRate conciergeRate = module.getRate(appConf.getSelectedRateCoin());
-        if (conciergeRate == null || conciergeRate.getTimestamp() + PivxContext.RATE_UPDATE_TIME < System.currentTimeMillis()){
+        ConciergeRate conciergeRate = module.getRate(appConf.getSelectedRateCoin());
+        if (conciergeRate == null || conciergeRate.getTimestamp() + ConciergeContext.RATE_UPDATE_TIME < System.currentTimeMillis()){
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
                         CoinMarketCapApiClient c = new CoinMarketCapApiClient();
-                        CoinMarketCapApiClient.PivxMarket conciergeMarket = c.getPivxPxrice();
-                        PivxRate conciergeRate = new PivxRate("USD",conciergeMarket.priceUsd,System.currentTimeMillis());
+                        CoinMarketCapApiClient.ConciergeMarket conciergeMarket = c.getConciergePxrice();
+                        ConciergeRate conciergeRate = new ConciergeRate("USD",conciergeMarket.priceUsd,System.currentTimeMillis());
                         module.saveRate(conciergeRate);
-                        final PivxRate conciergeBtcRate = new PivxRate("BTC",conciergeMarket.priceBtc,System.currentTimeMillis());
+                        final ConciergeRate conciergeBtcRate = new ConciergeRate("BTC",conciergeMarket.priceBtc,System.currentTimeMillis());
                         module.saveRate(conciergeBtcRate);
 
                         // Get the rest of the rates:
-                        List<PivxRate> rates = new CoinMarketCapApiClient.BitPayApi().getRates(new CoinMarketCapApiClient.BitPayApi.RatesConvertor<PivxRate>() {
+                        List<ConciergeRate> rates = new CoinMarketCapApiClient.BitPayApi().getRates(new CoinMarketCapApiClient.BitPayApi.RatesConvertor<ConciergeRate>() {
                             @Override
-                            public PivxRate convertRate(String code, String name, BigDecimal bitcoinRate) {
+                            public ConciergeRate convertRate(String code, String name, BigDecimal bitcoinRate) {
                                 BigDecimal rate = bitcoinRate.multiply(conciergeBtcRate.getRate());
-                                return new PivxRate(code,rate,System.currentTimeMillis());
+                                return new ConciergeRate(code,rate,System.currentTimeMillis());
                             }
                         });
 
-                        for (PivxRate rate : rates) {
+                        for (ConciergeRate rate : rates) {
                             module.saveRate(rate);
                         }
 
-                    } catch (RequestPivxRateException e) {
+                    } catch (RequestConciergeRateException e) {
                         e.printStackTrace();
                     } catch (Exception e){
                         e.printStackTrace();
@@ -574,7 +574,7 @@ public class PivxWalletService extends Service{
                                         (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) ?
                                                 getResources().getColor(R.color.bgPurple,null)
                                                 :
-                                                ContextCompat.getColor(PivxWalletService.this,R.color.bgPurple))
+                                                ContextCompat.getColor(ConciergeWalletService.this,R.color.bgPurple))
                         ;
 
                 nm.notify(NOT_BLOCKCHAIN_ALERT, mBuilder.build());

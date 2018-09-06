@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import org.conciergej.core.Coin;
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -281,7 +281,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                     if (conciergeModule.chechAddress(address)){
                         usedAddress = address;
                     }else {
-                        PivxURI conciergeUri = new PivxURI(address);
+                        ConciergeURI conciergeUri = new ConciergeURI(address);
                         usedAddress = conciergeUri.getAddress().toBase58();
                     }
                     final String tempPubKey = usedAddress;

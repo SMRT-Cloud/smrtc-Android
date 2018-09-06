@@ -3,16 +3,16 @@ package concierge.org.conciergewallet.rate;
 /**
  * Created by furszy on 7/5/17.
  */
-public class RequestPivxRateException extends Exception {
-    public RequestPivxRateException(String message) {
+public class RequestConciergeRateException extends Exception {
+    public RequestConciergeRateException(String message) {
         super(message);
     }
 
-    public RequestPivxRateException(String message, Throwable cause) {
+    public RequestConciergeRateException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public RequestPivxRateException(Exception e) {
+    public RequestConciergeRateException(Exception e) {
         super(e);
     }
 }

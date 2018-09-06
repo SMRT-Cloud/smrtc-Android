@@ -19,7 +19,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import concierge.org.conciergewallet.R;
-import global.PivxRate;
+import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.base.BaseRecyclerFragment;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerAdapter;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
@@ -39,7 +39,7 @@ public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWr
 
     private static final Logger logger = LoggerFactory.getLogger(TransactionsFragmentBase.class);
 
-    private PivxRate conciergeRate;
+    private ConciergeRate conciergeRate;
     private MonetaryFormat coinFormat = MonetaryFormat.BTC;
     private int scale = 3;
 

@@ -12,12 +12,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
+    <TextView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@mipmap/img_header_logo"  />
+android:text="Concierge"
+        android:textSize="50dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -25,6 +26,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:textSize="16sp"
         android:text="Wallet"
+        android:fontFamily="Roboto"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <LinearLayout

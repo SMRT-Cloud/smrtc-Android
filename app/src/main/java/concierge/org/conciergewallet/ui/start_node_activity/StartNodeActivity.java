@@ -90,7 +90,7 @@ public class StartNodeActivity extends BaseActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        conciergeApplication.startPivxService();
+                        conciergeApplication.startConciergeService();
                     }
                 }, TimeUnit.SECONDS.toMillis(5));
                 goNext();
@@ -114,7 +114,7 @@ public class StartNodeActivity extends BaseActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            conciergeApplication.startPivxService();
+                            conciergeApplication.startConciergeService();
                         }
                     }, TimeUnit.SECONDS.toMillis(5));
                 }

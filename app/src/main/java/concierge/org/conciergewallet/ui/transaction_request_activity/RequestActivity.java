@@ -20,7 +20,7 @@ import com.google.zxing.WriterException;
 import org.conciergej.core.Coin;
 import org.conciergej.core.NetworkParameters;
 import org.conciergej.core.Transaction;
-import org.conciergej.uri.PivxURI;
+import org.conciergej.uri.ConciergeURI;
 
 import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
@@ -113,7 +113,7 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
 
         NetworkParameters params = conciergeModule.getConf().getNetworkParams();
 
-        String conciergeURI = PivxURI.convertToBitcoinURI(
+        String conciergeURI = ConciergeURI.convertToBitcoinURI(
                 params,
                 addressStr,
                 amount,

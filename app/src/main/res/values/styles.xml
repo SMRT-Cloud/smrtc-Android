@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/holo_orange_dark</item>
+        <item name="colorPrimaryDark">@android:color/holo_orange_light</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -86,7 +86,7 @@
         <item name="android:padding">6dp</item>
         <item name="android:elevation">2dp</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/textColorPurple</item>
+        <item name="android:textColor">@color/holo_orange_dark</item>
         <item name="android:background">@drawable/button_selector</item>
         <item name="android:gravity">center</item>
         <item name="android:stateListAnimator">@null</item>
@@ -113,8 +113,8 @@
 
     <style name="fab_text_style">
         <item name="android:background">@color/transparent</item>
-        <item name="android:textColor">@color/mainText</item>
-        <item name="fab_colorNormal">@color/colorPrimary</item> <item name="fab_colorPressed">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@android:color/holo_orange_light</item>
+        <item name="fab_colorNormal">@color/holo_orange_dark</item> <item name="fab_colorPressed">@color/holo_orange_dark</item>
         <item name="android:textStyle">bold</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>

@@ -10,7 +10,7 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
-    <string name="app_name">PIVX wallet</string>
+    <string name="app_name">CCC wallet</string>
     <string name="btn_create_wallet">Create Wallet</string>
     <string name="btn_restore_wallet">Restore Wallet</string>
     <string name="restore_wallet_message">Select a backup of the wallet\nfrom a storage unit</string>
@@ -118,9 +118,9 @@
     <string name="title_slide1">Concierge is secure</string>
     <string name="desc_slide1">First code with BIP38 Encryption and Decryption of Private Keys</string>
     <string name="title_slide2">60 SECOND BLOCK TIME</string>
-    <string name="desc_slide2">Already very fast, PIVX transactions using SwiftX are instant with ZERO confirmation wait time required.</string>
+    <string name="desc_slide2">Already very fast, CCC transactions using SwiftX are instant with ZERO confirmation wait time required.</string>
     <string name="title_slide3">Extremely secure and private</string>
-    <string name="desc_slide3">PIVX is aiming it’s sights on establishing the first truly anonymous crypto-currency.</string>
+    <string name="desc_slide3">CCC is aiming it’s sights on establishing the first truly anonymous crypto-currency.</string>
     <string name="title_slide4">Trusted nodes federation</string>
     <string name="desc_slide4">Trusted nodes federation make light PoS wallets possible, you can rely on them or create your own trusted node!</string>
     <string name="option_add_node">Add node</string>
@@ -141,7 +141,7 @@
     <string name="restore_dialog_tag">restore dialog tag</string>
     <string name="restore_dialog_error">restore dialog error</string>
     <string name="settings_support">Support</string>
-    <string name="support_subject">PIVX wallet support</string>
+    <string name="support_subject">CCC wallet support</string>
     <string name="tutorial">Tutorial</string>
     <string name="copy">Copy</string>
     <string name="share">Share</string>
@@ -276,7 +276,7 @@
     <!-- Sweep wallet -->
     <!-- Sweep paper wallet means to redeem coins from a code usually printed on a paper -->
     <string name="title_activity_sweep_wallet">Sweep paper wallet</string>
-    <string name="sweep_wallet_info">You are about to transfer coins from a paper wallet to your PIVX wallet.\nAfter the transfer is complete, please avoid reusing the paper wallet for security reasons.\n\nSupported formats: WIF, BIP38, Mini private key.</string>
+    <string name="sweep_wallet_info">You are about to transfer coins from a paper wallet to your CCC wallet.\nAfter the transfer is complete, please avoid reusing the paper wallet for security reasons.\n\nSupported formats: WIF, BIP38, Mini private key.</string>
     <string name="sweep_wallet_key_title">Private key</string>
     <string name="sweep_wallet_key_password">Private key password</string>
     <string name="sweep_wallet_key_hint">type or scan a private key</string>
@@ -307,9 +307,9 @@
     <string name="terms_of_service" translatable="false">LEGAL DISCLAIMER\n
     \n
     \n
-    1. Risks related to the use of PIVX Wallet\n
+    1. Risks related to the use of CCC Wallet\n
     \n
-    Furszy and/or PIVX will not be responsible for any losses, damages or claims arising from events falling within the scope of the following five categories:\n
+    akshaynexus and/or CCC will not be responsible for any losses, damages or claims arising from events falling within the scope of the following five categories:\n
     \n
     (1) Mistakes made by the user of any cryptocurrency-related software or service, e.g., forgotten passwords, payments sent to wrong code addresses, and accidental deletion of wallets.\n
     \n
