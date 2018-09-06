@@ -37,6 +37,7 @@ public class ContactsStore extends AbstractSqliteDb<AddressLabel> implements Con
     private static final int KEY_POS_TX_HASHES_SET = 3;
 
 
+
     public ContactsStore(Context context) {
         super(context, DATABASE_NAME , null, DATABASE_VERSION);
     }
@@ -134,7 +135,7 @@ public class ContactsStore extends AbstractSqliteDb<AddressLabel> implements Con
         delete(KEY_ADDRESS,data.getAddresses().get(0));
     }
 
-    // TODO: Check this..
+//    // TODO: Check this..
     @Override
     public List<AddressLabel> getMyAddresses() {
         return null;

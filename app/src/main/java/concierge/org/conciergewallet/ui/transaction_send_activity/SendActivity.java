@@ -45,7 +45,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
+import concierge.org.conciergewallet.contacts.ContactsStore;
 import global.AddressLabel;
 import global.exceptions.NoPeerConnectedException;
 import global.ConciergeRate;
@@ -361,11 +363,17 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
         // todo: This is not updating the filter..
-//        if (filterableAdapter==null) {
-//            conciergeModule.getContacts()
-//            List<AddressLabel> list = new ArrayList<>(conciergeModule.getContacts());
-//            filterableAdapter = new MyFilterableAdapter(this,list );
-//            edit_address.setAdapter(filterableAdapter);
+        if (filterableAdapter==null) {
+            conciergeModule.getContacts();
+            ContactsStore contactsStore = new ContactsStore(ConciergeApplication.getInstance());
+
+            List<AddressLabel> list = new ArrayList<>(contactsStore.list());
+            filterableAdapter = new MyFilterableAdapter(this,list );
+            edit_address.setAdapter(filterableAdapter);
+        }
+//        List<AddressLabel> list2 = new ArrayList<>(conciergeModule.getContacts());
+//        for(int i = 0; i < list2.size(); i++) {
+//            System.out.print(list2.get(i));
 //        }
 
         if(getCurrentFocus()!=null) {
