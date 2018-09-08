@@ -136,6 +136,6 @@
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:gravity="center"
-        android:textColor="@android:color/white" />
+        android:textColor="#654321" />
 
 </LinearLayout>

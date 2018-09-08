@@ -66,7 +66,7 @@ public class StartNodeActivity extends BaseActivity {
                             trustedNodes.add(pivtrumPeerData);
                             for (PivtrumPeerData trustedNode : trustedNodes) {
                                 if (trustedNode.getHost().equals(FURSZY_TESTNET_SERVER)) {
-                                    hosts.add("pivt.furszy.tech");
+                                    hosts.add("103.208.27.27");
                                 } else
                                     hosts.add(trustedNode.getHost());
                             }
@@ -84,7 +84,7 @@ public class StartNodeActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // Check this..
-                conciergeApplication.setTrustedServer(null);
+                conciergeApplication.setTrustedServer(trustedNodes.get(3));
                 conciergeApplication.stopBlockchain();
                 // now that everything is good, start the service
                 new Handler().postDelayed(new Runnable() {

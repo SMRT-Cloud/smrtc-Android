@@ -44,7 +44,7 @@
         android:text="OK"
         android:gravity="center"
         android:textColor="@color/bgPurple"
-        android:background="@drawable/bg_button_border"
+        android:background="@drawable/bg_toolbar_login"
         />
 
 

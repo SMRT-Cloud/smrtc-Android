@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgPurple">
+    android:background="@drawable/bg_toolbar_login">
 
 
     <ImageView
@@ -20,7 +20,7 @@
         android:layout_below="@+id/img_alert"
         android:id="@+id/txt_title"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="#654321"
         android:textStyle="bold"
         android:gravity="center"
         android:paddingTop="24dp"
@@ -35,7 +35,7 @@
         android:layout_below="@+id/txt_title"
         android:id="@+id/txt_message"
         android:textSize="14sp"
-        android:textColor="@color/white"
+        android:textColor="#654321"
         android:textStyle="bold"
         android:gravity="center"
         android:paddingTop="24dp"
@@ -70,12 +70,12 @@
             android:id="@+id/btn_ok"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/bg_button_border"
+            android:background="@drawable/bg_toolbar_login"
             android:elevation="2dp"
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/button_ok"
-            android:textColor="@color/textColorPurple"
+            android:textColor="#654321"
             android:textSize="14sp" />
 
     </LinearLayout>

@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -292,14 +293,21 @@ public class WalletActivity extends BaseDrawerActivity {
                 try {
                     String address = data.getStringExtra(INTENT_EXTRA_RESULT);
                     final String usedAddress;
-                    if (conciergeModule.chechAddress(address)){
-                        usedAddress = address;
+                    String bitcoinUrl = address;
+                    String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
+                    String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
+                    String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
+
+
+                    if (conciergeModule.chechAddress(addresss)){
+                        usedAddress = addresss;
                     }else {
-                        ConciergeURI conciergeUri = new ConciergeURI(address);
-                        usedAddress = conciergeUri.getAddress().toBase58();
-                        final Coin amount = conciergeUri.getAmount();
+                        Log.i("addressAA", "Scanned Address is : " + address);
+                     ConciergeURI conciergeUri = new ConciergeURI(addresss);
+                        usedAddress = conciergeUri.getAddress().toString();
+                        final Coin amount = Coin.parseCoin(amounta);
                         if (amount != null){
-                            final String memo = conciergeUri.getMessage();
+                            final String memo = label;
                             StringBuilder text = new StringBuilder();
                             text.append(getString(R.string.amount)).append(": ").append(amount.toFriendlyString());
                             if (memo != null){

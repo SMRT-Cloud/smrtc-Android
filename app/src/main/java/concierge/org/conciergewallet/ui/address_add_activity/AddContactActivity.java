@@ -142,11 +142,16 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
                 try {
                     String address = data.getStringExtra(INTENT_EXTRA_RESULT);
                     String usedAddress;
-                    if (conciergeModule.chechAddress(address)){
-                        usedAddress = address;
+                    String bitcoinUrl = address;
+                    String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
+                    String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
+                    String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
+
+                    if (conciergeModule.chechAddress(addresss)){
+                        usedAddress = addresss;
                     }else {
                         ConciergeURI conciergeUri = new ConciergeURI(address);
-                        usedAddress = conciergeUri.getAddress().toBase58();
+                        usedAddress = addresss;
                     }
                     final String tempPubKey = usedAddress;
                     edit_address.setText(tempPubKey);

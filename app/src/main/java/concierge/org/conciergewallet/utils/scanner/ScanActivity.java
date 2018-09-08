@@ -261,7 +261,7 @@ public final class ScanActivity extends Activity implements SurfaceTextureListen
 				framingRectInPreview.offsetTo(0, 0);
 				final boolean cameraFlip = cameraManager.getFacing() == CameraInfo.CAMERA_FACING_FRONT;
 				final int cameraRotation = cameraManager.getOrientation();
-
+cameraManager.setTorch(true);
 				runOnUiThread(new Runnable()
 				{
 					@Override

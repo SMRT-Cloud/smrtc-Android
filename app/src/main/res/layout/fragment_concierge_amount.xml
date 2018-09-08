@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/holo_orange_dark">
+    android:background="@drawable/bg_toolbar_login">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:paddingBottom="10dp"
             android:text = "13.135 CCC"
-            android:textColor = "@color/textColorWhite"
+            android:textColor = "#654321"
             android:textSize = "24sp" />
         <TextView
             android:layout_below="@+id/pivValue"
@@ -70,7 +70,7 @@
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
                 android:text = "Unspendable: 0"
-                android:textColor = "@color/mainGreen"
+                android:textColor = "@color/white"
                 android:textSize = "14sp" />
 
         </LinearLayout>

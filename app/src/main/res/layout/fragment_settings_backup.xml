@@ -82,12 +82,12 @@
             android:id="@+id/btn_backup"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/bg_button_border"
+            android:background="@drawable/bg_toolbar_login"
             android:elevation="2dp"
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/backup_wallet"
-            android:textColor="@color/textColorPurple"
+            android:textColor="#654321"
             android:textSize="14sp" />
 
     </LinearLayout>

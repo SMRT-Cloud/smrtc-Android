@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txt_add_address"
-            android:background="@drawable/bg_button_border"
+            android:background="@drawable/bg_toolbar_login"
             android:gravity="center"
             android:paddingBottom="12dp"
             android:paddingTop="12dp"

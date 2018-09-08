@@ -4,16 +4,16 @@
     android:layout_height="match_parent"
     android:paddingTop="100dp"
     android:paddingBottom="60dp"
-    android:background="#FFC400">
+    android:background="@drawable/bg_toolbar_login">
 
 
     <ImageView
         android:id="@+id/tutorialImage"
-        android:layout_alignParentTop = "true"
-        android:layout_centerHorizontal = "true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_step_4" />
+        android:layout_width="144dp"
+        android:layout_height="116dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/networknode" />
 
     <LinearLayout
         android:layout_below="@+id/tutorialImage"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="@string/title_slide4"
             android:textAllCaps="true"
-            android:textColor="@android:color/white"
+            android:textColor="#654321"
             android:textSize="@dimen/text_title"
             android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
             android:paddingRight="16dp"
             android:text="@string/desc_slide4"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            android:textColor="#654321"
             android:textSize="@dimen/text_title" />
 
 
@@ -57,7 +57,7 @@
         android:elevation="0dp"
         android:background="@color/transparent"
         android:text="@string/btn_select_node"
-        android:textColor="@color/mainGreen"
+        android:textColor="#654321"
         android:textSize="15sp" />-->
 
 </RelativeLayout>

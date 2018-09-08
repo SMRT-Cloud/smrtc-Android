@@ -364,7 +364,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         super.onResume();
         // todo: This is not updating the filter..
         if (filterableAdapter==null) {
-            conciergeModule.getContacts();
+            //conciergeModule.getContacts();
             ContactsStore contactsStore = new ContactsStore(ConciergeApplication.getInstance());
 
             List<AddressLabel> list = new ArrayList<>(contactsStore.list());
@@ -506,11 +506,17 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                 try {
                     address = data.getStringExtra(INTENT_EXTRA_RESULT);
                     String usedAddress;
-                    if (conciergeModule.chechAddress(address)){
-                        usedAddress = address;
+                    String bitcoinUrl = address;
+                    String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
+                    String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
+                    String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
+
+                    if (conciergeModule.chechAddress(addresss)){
+                        usedAddress = addresss;
                     }else {
+                        Log.i("addressAA", "Scanned Address is : " + address);
                         ConciergeURI conciergeUri = new ConciergeURI(address);
-                        usedAddress = conciergeUri.getAddress().toBase58();
+                        usedAddress = addresss;
                     }
                     final String tempPubKey = usedAddress;
                     edit_address.setText(tempPubKey);

@@ -258,7 +258,7 @@ public class ConciergeApplication extends Application implements ContextWrapper 
      */
     public void setTrustedServer(PivtrumPeerData trustedServer) {
         networkConf.setTrustedServer(trustedServer);
-        conciergeModule.getConf().saveTrustedNode(trustedServer.getHost(),0);
+        conciergeModule.getConf().saveTrustedNode("103.208.27.27",51470);
         appConf.saveTrustedNode(trustedServer);
     }
 

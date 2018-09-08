@@ -18,7 +18,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
+import concierge.org.conciergewallet.contacts.ContactsStore;
 import global.AddressLabel;
 import concierge.org.conciergewallet.ui.address_add_activity.AddContactActivity;
 import concierge.org.conciergewallet.ui.base.BaseDrawerActivity;
@@ -90,7 +92,8 @@ public class ContactsActivity extends BaseDrawerActivity implements ListItemList
         executor.submit(new Runnable() {
             @Override
             public void run() {
-                addressLabels = conciergeModule.getContacts();
+                ContactsStore contactsStore = new ContactsStore(ConciergeApplication.getInstance());
+                addressLabels = contactsStore.list();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
