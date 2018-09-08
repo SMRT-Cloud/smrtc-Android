@@ -13,7 +13,7 @@
         android:layout_height="143dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/private" />
+        android:src="@mipmap/private_logo" />
 
     <LinearLayout
         android:layout_below="@+id/tutorialImage"
