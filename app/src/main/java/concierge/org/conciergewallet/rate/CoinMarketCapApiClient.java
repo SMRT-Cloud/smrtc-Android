@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CoinMarketCapApiClient {
 
-    private static final String URL = "https://api.coinmarketcap.com/v1/";
+    private static final String URL = "http://mn.concept211.com/api/";
 
     public class ConciergeMarket{
 
@@ -48,7 +48,7 @@ public class CoinMarketCapApiClient {
     public ConciergeMarket getConciergePxrice() throws RequestConciergeRateException{
         try {
             ConciergeMarket conciergeMarket = null;
-            String url = this.URL + "ticker/pivx/";
+            String url = this.URL + "ccc";
             HttpResponse httpResponse = get(url);
             // receive response as inputStream
             InputStream inputStream = httpResponse.getEntity().getContent();
@@ -61,10 +61,10 @@ public class CoinMarketCapApiClient {
                 conciergeMarket = new ConciergeMarket(
                         new BigDecimal(jsonObject.getString("price_usd")),
                         new BigDecimal(jsonObject.getString("price_btc")),
-                        new BigDecimal(jsonObject.getString("market_cap_usd")),
-                        new BigDecimal(jsonObject.getString("total_supply")),
-                        jsonObject.getInt("rank")
-                );
+                        new BigDecimal(jsonObject.getString("volume_usd")),
+                        new BigDecimal(22000000),
+                        Integer.parseInt("100"));
+
             }
             return conciergeMarket;
         } catch (ClientProtocolException e) {
