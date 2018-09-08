@@ -20,7 +20,7 @@
         android:layout_below="@+id/img_alert"
         android:id="@+id/txt_title"
         android:textSize="18sp"
-        android:textColor="#654321"
+        android:textColor="#ffffff"
         android:textStyle="bold"
         android:gravity="center"
         android:paddingTop="24dp"
@@ -35,7 +35,7 @@
         android:layout_below="@+id/txt_title"
         android:id="@+id/txt_message"
         android:textSize="14sp"
-        android:textColor="#654321"
+        android:textColor="#ffffff"
         android:textStyle="bold"
         android:gravity="center"
         android:paddingTop="24dp"
@@ -75,7 +75,7 @@
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/button_ok"
-            android:textColor="#654321"
+            android:textColor="#ffffff"
             android:textSize="14sp" />
 
     </LinearLayout>

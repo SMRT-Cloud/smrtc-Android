@@ -33,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:paddingBottom="10dp"
             android:text = "13.135 CCC"
-            android:textColor = "#654321"
+            android:textColor = "#ffffff"
             android:textSize = "24sp" />
         <TextView
             android:layout_below="@+id/pivValue"
@@ -42,7 +42,7 @@
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
             tools:text = "14710 USD"
-            android:textColor = "@color/textColorLightPurple"
+            android:textColor = "#ffffff"
             android:textSize = "16sp"
             android:paddingBottom="20dp"/>
 

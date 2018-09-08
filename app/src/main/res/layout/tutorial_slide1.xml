@@ -33,7 +33,7 @@
                 android:paddingRight="16dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:textColor="#654321"
+                android:textColor="#ffffff"
                 android:textSize="@dimen/text_title"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
@@ -48,7 +48,7 @@
                 android:paddingRight="16dp"
                 android:text="@string/desc_slide1"
                 android:textAlignment="center"
-                android:textColor="#654321"
+                android:textColor="#ffffff"
                 android:textSize="@dimen/text_title" />
         </LinearLayout>
 

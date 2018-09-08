@@ -33,7 +33,7 @@
             android:drawablePadding="10dp"
             android:text="@string/next_words"
             android:onClick="btnNextClick"
-            android:textColor="#654321" />
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/btn_back"
@@ -45,7 +45,7 @@
             android:drawableLeft="@drawable/ic_arrow_back"
             android:drawablePadding="10dp"
             android:text="@string/back"
-            android:textColor="#654321" />
+            android:textColor="#ffffff" />
 
     </RelativeLayout>
 
@@ -70,7 +70,7 @@
                 android:text="@string/restoring_wallet"
                 android:layout_gravity="center"
                 android:textSize="18sp"
-                android:textColor="#654321"
+                android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:paddingBottom="24dp"
                 android:gravity="center"/>
