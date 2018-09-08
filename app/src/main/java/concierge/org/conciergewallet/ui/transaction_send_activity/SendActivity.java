@@ -25,6 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
+
 import org.conciergej.core.Address;
 import org.conciergej.core.Coin;
 import org.conciergej.core.InsufficientMoneyException;
@@ -48,6 +51,7 @@ import java.util.Set;
 import concierge.org.conciergewallet.ConciergeApplication;
 import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.contacts.ContactsStore;
+import concierge.org.conciergewallet.ui.newqrscanner.BarcodeCaptureActivity;
 import global.AddressLabel;
 import global.exceptions.NoPeerConnectedException;
 import global.ConciergeRate;
@@ -107,6 +111,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
     private static final int CUSTOM_INPUTS = 125;
     private static final int SEND_DETAIL = 126;
     private static final int CUSTOM_CHANGE_ADDRESS = 127;
+    private static final int RC_BARCODE_CAPTURE = 9001;
 
     private View root;
     private Button buttonSend, addAllPiv;
@@ -405,7 +410,10 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     requestPermissions(perms, permsRequestCode);
                 }
             }
-            startActivityForResult(new Intent(this, ScanActivity.class),SCANNER_RESULT);
+            Intent intent = new Intent(this, BarcodeCaptureActivity.class);
+            intent.putExtra(BarcodeCaptureActivity.AutoFocus, true);
+            intent.putExtra(BarcodeCaptureActivity.UseFlash, false);
+            startActivityForResult(intent, RC_BARCODE_CAPTURE);
         }else if(id == R.id.btn_add_all){
             if (!isMultiSend) {
                 cleanWallet = true;
@@ -500,11 +508,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == SCANNER_RESULT){
-            if (resultCode==RESULT_OK) {
+        if (requestCode == RC_BARCODE_CAPTURE){
+            if (resultCode== CommonStatusCodes.SUCCESS) {
                 String address = "";
-                try {
-                    address = data.getStringExtra(INTENT_EXTRA_RESULT);
+                try {  Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                     address = barcode.displayValue;
+
                     String usedAddress;
                     String bitcoinUrl = address;
                     String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");

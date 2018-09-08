@@ -14,9 +14,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
+
 import org.conciergej.uri.ConciergeURI;
 
 import concierge.org.conciergewallet.R;
+import concierge.org.conciergewallet.ui.newqrscanner.BarcodeCaptureActivity;
 import global.AddressLabel;
 import global.exceptions.ContactAlreadyExistException;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
@@ -33,7 +37,7 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
 
     public static final String ADDRESS_TO_ADD = "address";
     private static final int SCANNER_RESULT = 122;
-
+    private static final int RC_BARCODE_CAPTURE = 9001;
     private View root;
     private EditText edit_name;
     private EditText edit_address;
@@ -131,33 +135,39 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
                     requestPermissions(perms, permsRequestCode);
                 }
             }
-            startActivityForResult(new Intent(this, ScanActivity.class),SCANNER_RESULT);
+            Intent intent = new Intent(this, BarcodeCaptureActivity.class);
+            intent.putExtra(BarcodeCaptureActivity.AutoFocus, true);
+            intent.putExtra(BarcodeCaptureActivity.UseFlash, false);
+            startActivityForResult(intent, RC_BARCODE_CAPTURE);
         }
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == SCANNER_RESULT){
-            if (resultCode==RESULT_OK) {
-                try {
-                    String address = data.getStringExtra(INTENT_EXTRA_RESULT);
-                    String usedAddress;
-                    String bitcoinUrl = address;
-                    String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
-                    String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
-                    String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
+        if (requestCode == RC_BARCODE_CAPTURE){
+            if (resultCode== CommonStatusCodes.SUCCESS) {
+                if (data != null) {
+                    try {
+                        Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                        String address = barcode.displayValue;
+                        String usedAddress;
+                        String bitcoinUrl = address;
+                        String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
+                        String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
+                        String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
 
-                    if (conciergeModule.chechAddress(addresss)){
-                        usedAddress = addresss;
-                    }else {
-                        ConciergeURI conciergeUri = new ConciergeURI(address);
-                        usedAddress = addresss;
-                    }
-                    final String tempPubKey = usedAddress;
-                    edit_address.setText(tempPubKey);
-                }catch (Exception e){
-                    Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();
-                }
+                        if (conciergeModule.chechAddress(addresss)){
+                            usedAddress = addresss;
+                        }else {
+                            ConciergeURI conciergeUri = new ConciergeURI(address);
+                            usedAddress = addresss;
+                        }
+                        final String tempPubKey = usedAddress;
+                        edit_address.setText(tempPubKey);
+                    }catch (Exception e){
+
+                        Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();
+                    }}
             }
         }
 

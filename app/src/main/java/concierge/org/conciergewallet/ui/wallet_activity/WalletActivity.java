@@ -19,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
 
 import org.conciergej.core.Coin;
 import org.conciergej.core.Transaction;
@@ -30,6 +32,7 @@ import java.util.List;
 
 import chain.BlockchainState;
 import concierge.org.conciergewallet.R;
+import concierge.org.conciergewallet.ui.newqrscanner.BarcodeCaptureActivity;
 import global.exceptions.NoPeerConnectedException;
 import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.base.BaseDrawerActivity;
@@ -72,6 +75,7 @@ public class WalletActivity extends BaseDrawerActivity {
     private View container_syncing;
     private ConciergeRate conciergeRate;
     private TransactionsFragmentBase txsFragment;
+    private static final int RC_BARCODE_CAPTURE = 9001;
 
     // Receiver
     private LocalBroadcastManager localBroadcastManager;
@@ -257,7 +261,10 @@ public class WalletActivity extends BaseDrawerActivity {
                     requestPermissions(perms, permsRequestCode);
                 }
             }
-            startActivityForResult(new Intent(this, ScanActivity.class),SCANNER_RESULT);
+            Intent intent = new Intent(this, BarcodeCaptureActivity.class);
+            intent.putExtra(BarcodeCaptureActivity.AutoFocus, true);
+            intent.putExtra(BarcodeCaptureActivity.UseFlash, false);
+            startActivityForResult(intent, RC_BARCODE_CAPTURE);
             return true;
         }
 
@@ -288,15 +295,16 @@ public class WalletActivity extends BaseDrawerActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == SCANNER_RESULT){
-            if (resultCode==RESULT_OK) {
+        if (requestCode == RC_BARCODE_CAPTURE){
+            if (resultCode== CommonStatusCodes.SUCCESS) {
                 try {
-                    String address = data.getStringExtra(INTENT_EXTRA_RESULT);
+                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                    String address = barcode.displayValue;
                     final String usedAddress;
                     String bitcoinUrl = address;
                     String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
-                    String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
-                    String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
+                   final String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
+                   final String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
 
 
                     if (conciergeModule.chechAddress(addresss)){
@@ -304,7 +312,7 @@ public class WalletActivity extends BaseDrawerActivity {
                     }else {
                         Log.i("addressAA", "Scanned Address is : " + address);
                      ConciergeURI conciergeUri = new ConciergeURI(addresss);
-                        usedAddress = conciergeUri.getAddress().toString();
+                        usedAddress = addresss;
                         final Coin amount = Coin.parseCoin(amounta);
                         if (amount != null){
                             final String memo = label;
@@ -322,8 +330,8 @@ public class WalletActivity extends BaseDrawerActivity {
                                     public void onClick(View v) {
                                         Intent intent = new Intent(v.getContext(), SendActivity.class);
                                         intent.putExtra(INTENT_ADDRESS,usedAddress);
-                                        intent.putExtra(INTENT_EXTRA_TOTAL_AMOUNT,amount);
-                                        intent.putExtra(INTENT_MEMO,memo);
+                                        intent.putExtra(INTENT_EXTRA_TOTAL_AMOUNT,amounta);
+                                        intent.putExtra(INTENT_MEMO,label);
                                         startActivity(intent);
                                     }
                                 });

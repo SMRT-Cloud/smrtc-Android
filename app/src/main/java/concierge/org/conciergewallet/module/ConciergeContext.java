@@ -38,7 +38,7 @@ public class ConciergeContext {
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 
     /** Donation address */
-    public static final String DONATE_ADDRESS = "DLwFC1qQbUzFZJg1vnvdAXBunRPh6anceK";
+    public static final String DONATE_ADDRESS = "CVHPGdWFuewB1J1hnYwWKuSNyQvMN4ExTQ";
 
     public static final class Files{
 

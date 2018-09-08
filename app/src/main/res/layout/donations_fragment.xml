@@ -28,10 +28,10 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="106dp"
+            android:layout_height="125dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/img_love"/>
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id = "@+id/titleDonation"
