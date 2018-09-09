@@ -319,13 +319,14 @@ public class WalletActivity extends BaseDrawerActivity {
 
 
                         Log.i("addressAA", "Scanned Address is : " + address);
+
 //                     ConciergeURI conciergeUri = new ConciergeURI(addresss);
                         usedAddress = addresss;
+                    if ( bitcoinUrl.toLowerCase().contains("amount") || bitcoinUrl.toLowerCase().contains("amount") && bitcoinUrl.toLowerCase().contains("label")
+                            ) {
                         final Coin amount = Coin.parseCoin(amounta);
-                        Log.i("addressAA", " " + address);
-
-                        if (amount != null){
-                            final String memo = label;
+                        if (amount != null && Integer.parseInt(amounta) > 0){
+                            final String memo = label.replaceAll("%20","");
                             StringBuilder text = new StringBuilder();
                             text.append(getString(R.string.amount)).append(": ").append(amount.toFriendlyString());
                             if (memo != null){
@@ -335,25 +336,35 @@ public class WalletActivity extends BaseDrawerActivity {
                             SimpleTextDialog dialogFragment = DialogsUtil.buildSimpleTextDialog(this,
                                     getString(R.string.payment_request_received),
                                     text.toString())
-                                .setOkBtnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Intent intent = new Intent(v.getContext(), SendActivity.class);
-                                        intent.putExtra(INTENT_ADDRESS,usedAddress);
-                                        intent.putExtra(INTENT_EXTRA_TOTAL_AMOUNT,amount);
-                                        intent.putExtra(INTENT_MEMO,memo);
-                                        startActivity(intent);
-                                    }
-                                });
+                                    .setOkBtnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(v.getContext(), SendActivity.class);
+                                            intent.putExtra(INTENT_ADDRESS,usedAddress);
+                                            intent.putExtra(INTENT_EXTRA_TOTAL_AMOUNT,amount);
+                                            intent.putExtra(INTENT_MEMO,memo);
+                                            startActivity(intent);
+                                        }
+                                    });
                             dialogFragment.setImgAlertRes(R.drawable.ic_send_action);
                             dialogFragment.setAlignBody(SimpleTextDialog.Align.LEFT);
                             dialogFragment.setImgAlertRes(R.drawable.ic_fab_recieve);
                             dialogFragment.show(getFragmentManager(),"payment_request_dialog");
+                           // DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
                             return;
                         }
 
+                    }
+                    else{
+                        DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
 
-                    DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
+                    }
+                        //final Coin amount = Coin.parseCoin(amounta);
+
+
+
+
+
                 }catch (Exception e){
                     e.printStackTrace();
                     Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();

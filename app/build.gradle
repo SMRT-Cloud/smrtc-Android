@@ -5,7 +5,7 @@ android {
     buildToolsVersion '27.0.3'
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "concierge.tech.furszy"
+        applicationId "concierge.tech.akshaynexus"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 20

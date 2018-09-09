@@ -33,12 +33,12 @@ public class ConciergeContext {
     public static final String URL_FIAT_CURRENCIES_RATE = "https://bitpay.com/rates";
 
     // report mail
-    public static final String REPORT_EMAIL = "akshaycm@hotmail.com";
+    public static final String REPORT_EMAIL = "technical@conciergecoin.net";
     /** Subject line for manually reported issues. */
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 
     /** Donation address */
-    public static final String DONATE_ADDRESS = "CVHPGdWFuewB1J1hnYwWKuSNyQvMN4ExTQ";
+    public static final String DONATE_ADDRESS = "CPEmpMY89QAMbDvXmbjbnsNdw4EAUbvHtg";
 
     public static final class Files{
 
