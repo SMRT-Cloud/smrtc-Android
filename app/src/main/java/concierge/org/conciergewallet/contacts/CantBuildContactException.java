@@ -1,7 +1,7 @@
 package concierge.org.conciergewallet.contacts;
 
 /**
- * Created by furszy on 7/1/17.
+ * Created by akshaynexus on 7/1/17.
  */
 public class CantBuildContactException extends RuntimeException {
     public CantBuildContactException(Exception e) {

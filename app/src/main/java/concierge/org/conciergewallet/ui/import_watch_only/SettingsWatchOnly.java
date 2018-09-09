@@ -22,7 +22,7 @@ import concierge.org.conciergewallet.utils.DialogsUtil;
 import static concierge.org.conciergewallet.utils.CrashReporter.appendSavedBackgroundTraces;
 
 /**
- * Created by furszy on 8/30/17.
+ * Created by akshaynexus on 8/30/17.
  */
 
 public class SettingsWatchOnly extends BaseActivity {

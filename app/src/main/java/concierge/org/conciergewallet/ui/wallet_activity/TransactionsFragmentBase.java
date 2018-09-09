@@ -32,7 +32,7 @@ import static concierge.org.conciergewallet.ui.transaction_detail_activity.Fragm
 import static concierge.org.conciergewallet.utils.TxUtils.getAddressOrContact;
 
 /**
- * Created by furszy on 6/29/17.
+ * Created by akshaynexus on 6/29/17.
  */
 
 public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWrapper> {

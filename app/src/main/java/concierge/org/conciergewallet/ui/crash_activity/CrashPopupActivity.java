@@ -35,7 +35,7 @@ import concierge.org.conciergewallet.utils.CrashReporter;
 import static concierge.org.conciergewallet.utils.AndroidUtils.shareText;
 
 /**
- * Created by furszy on 8/18/17.
+ * Created by akshaynexus on 8/18/17.
  */
 
 public class CrashPopupActivity extends AppCompatActivity implements View.OnClickListener {

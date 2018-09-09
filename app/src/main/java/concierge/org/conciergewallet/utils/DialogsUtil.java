@@ -31,7 +31,7 @@ import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.ui.base.dialogs.SimpleTwoButtonsDialog;
 
 /**
- * Created by furszy on 7/5/17.
+ * Created by akshaynexus on 7/5/17.
  */
 
 public class DialogsUtil {

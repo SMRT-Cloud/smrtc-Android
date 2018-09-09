@@ -1,7 +1,7 @@
 package concierge.org.conciergewallet.rate;
 
 /**
- * Created by furszy on 7/5/17.
+ * Created by akshaynexus on 7/5/17.
  */
 public class RequestConciergeRateException extends Exception {
     public RequestConciergeRateException(String message) {

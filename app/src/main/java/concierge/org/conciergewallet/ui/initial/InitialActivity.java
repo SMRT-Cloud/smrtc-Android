@@ -11,7 +11,7 @@ import concierge.org.conciergewallet.ui.wallet_activity.WalletActivity;
 import concierge.org.conciergewallet.utils.AppConf;
 
 /**
- * Created by furszy on 8/19/17.
+ * Created by akshaynexus on 8/19/17.
  */
 
 public class InitialActivity extends AppCompatActivity {

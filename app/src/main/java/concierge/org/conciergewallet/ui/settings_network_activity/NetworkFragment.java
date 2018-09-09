@@ -15,7 +15,7 @@ import concierge.org.conciergewallet.ui.base.BaseRecyclerFragment;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerAdapter;
 
 /**
- * Created by furszy on 7/2/17.
+ * Created by akshaynexus on 7/2/17.
  */
 
 public class NetworkFragment extends BaseRecyclerFragment<Peer> {

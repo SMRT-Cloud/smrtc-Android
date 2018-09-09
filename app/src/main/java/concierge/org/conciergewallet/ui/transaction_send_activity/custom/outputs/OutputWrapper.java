@@ -5,7 +5,7 @@ import org.conciergej.core.Coin;
 import java.io.Serializable;
 
 /**
- * Created by furszy on 8/4/17.
+ * Created by akshaynexus on 8/4/17.
  */
 
 public class OutputWrapper implements Serializable{

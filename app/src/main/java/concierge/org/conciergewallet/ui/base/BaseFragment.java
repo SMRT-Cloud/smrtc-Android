@@ -10,7 +10,7 @@ import concierge.org.conciergewallet.ConciergeApplication;
 import global.ConciergeModule;
 
 /**
- * Created by furszy on 6/29/17.
+ * Created by akshaynexus on 6/29/17.
  */
 
 public class BaseFragment extends Fragment {

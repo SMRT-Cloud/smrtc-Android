@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by furszy on 7/5/17.
+ * Created by akshaynexus on 7/5/17.
  */
 
 public class CoinMarketCapApiClient {

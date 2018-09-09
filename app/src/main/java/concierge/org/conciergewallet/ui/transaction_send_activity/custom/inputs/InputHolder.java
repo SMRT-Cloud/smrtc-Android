@@ -8,7 +8,7 @@ import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
 
 /**
- * Created by furszy on 8/4/17.
+ * Created by akshaynexus on 8/4/17.
  */
 
 public class InputHolder extends BaseRecyclerViewHolder{

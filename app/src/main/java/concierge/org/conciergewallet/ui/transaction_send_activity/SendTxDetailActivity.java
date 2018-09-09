@@ -10,7 +10,7 @@ import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.ui.pincode_activity.PincodeActivity;
 
 /**
- * Created by furszy on 8/7/17.
+ * Created by akshaynexus on 8/7/17.
  * //
  */
 

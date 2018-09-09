@@ -17,7 +17,7 @@ import global.AddressLabel;
 import global.store.ContactsStoreDao;
 
 /**
- * Created by furszy on 6/22/17.
+ * Created by akshaynexus on 6/22/17.
  */
 
 public class ContactsStore extends AbstractSqliteDb<AddressLabel> implements ContactsStoreDao<AddressLabel> {

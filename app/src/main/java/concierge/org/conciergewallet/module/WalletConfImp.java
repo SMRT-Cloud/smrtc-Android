@@ -18,7 +18,7 @@ import static concierge.org.conciergewallet.module.ConciergeContext.PEER_DISCOVE
 import static concierge.org.conciergewallet.module.ConciergeContext.PEER_TIMEOUT_MS;
 
 /**
- * Created by furszy on 6/4/17.
+ * Created by akshaynexus on 6/4/17.
  */
 
 public class WalletConfImp extends Configurations implements WalletConfiguration {

@@ -12,7 +12,7 @@ import global.ConciergeRate;
 import global.store.RateDbDao;
 
 /**
- * Created by furszy on 7/5/17.
+ * Created by akshaynexus on 7/5/17.
  */
 
 public class RateDb extends AbstractSqliteDb<ConciergeRate> implements RateDbDao<ConciergeRate> {

@@ -25,7 +25,7 @@ import static concierge.org.conciergewallet.utils.scanner.ScanActivity.INTENT_EX
 
 
 /**
- * Created by furszy on 10/17/17.
+ * Created by akshaynexus on 10/17/17.
  */
 
 public class ChangeAddressActivity extends BaseActivity {

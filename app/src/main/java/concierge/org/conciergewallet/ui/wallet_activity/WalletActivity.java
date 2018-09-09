@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
+import com.google.common.base.Splitter;
 
 import org.conciergej.core.Coin;
 import org.conciergej.core.Transaction;
@@ -29,6 +30,7 @@ import org.conciergej.uri.ConciergeURI;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import chain.BlockchainState;
 import concierge.org.conciergewallet.R;
@@ -302,18 +304,26 @@ public class WalletActivity extends BaseDrawerActivity {
                     String address = barcode.displayValue;
                     final String usedAddress;
                     String bitcoinUrl = address;
+                    String uri = bitcoinUrl;
+                    String query = uri.split("\\?")[1];
+                    final Map<String, String> map = Splitter.on('&').trimResults().withKeyValueSeparator("=").split(query);
+
+//                    String tempstr =
                     String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
-                   final String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
-                   final String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
+                    final String amounta = map.get("amount");
+                    final  String label = map.get("label");
+                    Log.i("addressAA", "Map: " + map);
 
 
-                    if (conciergeModule.chechAddress(addresss)){
-                        usedAddress = addresss;
-                    }else {
+
+
+
                         Log.i("addressAA", "Scanned Address is : " + address);
-                     ConciergeURI conciergeUri = new ConciergeURI(addresss);
+//                     ConciergeURI conciergeUri = new ConciergeURI(addresss);
                         usedAddress = addresss;
                         final Coin amount = Coin.parseCoin(amounta);
+                        Log.i("addressAA", " " + address);
+
                         if (amount != null){
                             final String memo = label;
                             StringBuilder text = new StringBuilder();
@@ -330,8 +340,8 @@ public class WalletActivity extends BaseDrawerActivity {
                                     public void onClick(View v) {
                                         Intent intent = new Intent(v.getContext(), SendActivity.class);
                                         intent.putExtra(INTENT_ADDRESS,usedAddress);
-                                        intent.putExtra(INTENT_EXTRA_TOTAL_AMOUNT,amounta);
-                                        intent.putExtra(INTENT_MEMO,label);
+                                        intent.putExtra(INTENT_EXTRA_TOTAL_AMOUNT,amount);
+                                        intent.putExtra(INTENT_MEMO,memo);
                                         startActivity(intent);
                                     }
                                 });
@@ -342,7 +352,7 @@ public class WalletActivity extends BaseDrawerActivity {
                             return;
                         }
 
-                    }
+
                     DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
                 }catch (Exception e){
                     e.printStackTrace();

@@ -24,7 +24,7 @@ import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_BROA
 import static concierge.org.conciergewallet.service.IntentsConstants.DATA_TRANSACTION_HASH;
 
 /**
- * Created by furszy on 7/24/17.
+ * Created by akshaynexus on 7/24/17.
  */
 
 public class DonateActivity extends BaseDrawerActivity {

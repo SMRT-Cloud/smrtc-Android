@@ -21,7 +21,7 @@ import global.wrappers.InputWrapper;
 import wallet.exceptions.TxNotFoundException;
 
 /**
- * Created by furszy on 8/14/17.
+ * Created by akshaynexus on 8/14/17.
  */
 
 public class InputsDetailFragment extends BaseRecyclerFragment<InputWrapper> {

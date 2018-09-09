@@ -21,7 +21,7 @@ import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.utils.DialogsUtil;
 
 /**
- * Created by furszy on 8/4/17.
+ * Created by akshaynexus on 8/4/17.
  */
 
 public class OutputsActivity extends BaseActivity {

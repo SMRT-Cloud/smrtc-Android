@@ -20,11 +20,11 @@ gradle clean build
 
 ### Cloning repository.
 
-Use git clone --recurse-submodules https://github.com/<CCC or furszy>/CCC-Android.git
+Use git clone --recurse-submodules https://github.com/<CCC or akshaynexus>/CCC-Android.git
   
 #### or
 
-Use git clone https://github.com/<CCC or furszy>/CCC-Android.git
+Use git clone https://github.com/<CCC or akshaynexus>/CCC-Android.git
   
 git submodule init
 

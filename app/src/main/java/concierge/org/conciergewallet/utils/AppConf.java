@@ -7,7 +7,7 @@ import pivtrum.PivtrumPeerData;
 import static concierge.org.conciergewallet.module.ConciergeContext.DEFAULT_RATE_COIN;
 
 /**
- * Created by furszy on 6/8/17.
+ * Created by akshaynexus on 6/8/17.
  */
 
 public class AppConf extends Configurations {

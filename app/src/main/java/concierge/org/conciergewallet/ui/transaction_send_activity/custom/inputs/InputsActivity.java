@@ -14,7 +14,7 @@ import concierge.org.conciergewallet.ui.base.BaseActivity;
 import static concierge.org.conciergewallet.ui.transaction_send_activity.SendActivity.INTENT_EXTRA_TOTAL_AMOUNT;
 
 /**
- * Created by furszy on 8/4/17.
+ * Created by akshaynexus on 8/4/17.
  */
 
 public class InputsActivity extends BaseActivity {

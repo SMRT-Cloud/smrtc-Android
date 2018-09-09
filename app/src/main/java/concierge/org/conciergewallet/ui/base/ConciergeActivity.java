@@ -19,7 +19,7 @@ import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_STOR
 import static concierge.org.conciergewallet.service.IntentsConstants.ACTION_TRUSTED_PEER_CONNECTION_FAIL;
 
 /**
- * Created by furszy on 6/8/17.
+ * Created by akshaynexus on 6/8/17.
  */
 
 public class ConciergeActivity extends AppCompatActivity {

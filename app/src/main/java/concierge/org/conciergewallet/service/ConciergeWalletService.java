@@ -76,7 +76,7 @@ import static concierge.org.conciergewallet.service.IntentsConstants.NOT_BLOCKCH
 import static concierge.org.conciergewallet.service.IntentsConstants.NOT_COINS_RECEIVED;
 
 /**
- * Created by furszy on 6/12/17.
+ * Created by akshaynexus on 6/12/17.
  */
 
 public class ConciergeWalletService extends Service{

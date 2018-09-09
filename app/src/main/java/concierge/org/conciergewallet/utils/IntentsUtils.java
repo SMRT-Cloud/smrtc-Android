@@ -14,7 +14,7 @@ import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.module.ConciergeContext;
 
 /**
- * Created by furszy on 7/10/17.
+ * Created by akshaynexus on 7/10/17.
  */
 
 public class IntentsUtils {

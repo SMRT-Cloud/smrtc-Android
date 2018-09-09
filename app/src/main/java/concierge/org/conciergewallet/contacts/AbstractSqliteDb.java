@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import global.store.AbstractDbDao;
 
 /**
- * Created by furszy on 6/6/17.
+ * Created by akshaynexus on 6/6/17.
  */
 
 public abstract class AbstractSqliteDb<T> extends SQLiteOpenHelper implements AbstractDbDao<T> {

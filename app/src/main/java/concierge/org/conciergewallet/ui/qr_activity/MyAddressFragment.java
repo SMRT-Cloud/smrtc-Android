@@ -31,7 +31,7 @@ import static concierge.org.conciergewallet.utils.AndroidUtils.copyToClipboard;
 import static concierge.org.conciergewallet.utils.QrUtils.encodeAsBitmap;
 
 /**
- * Created by furszy on 6/8/17.
+ * Created by akshaynexus on 6/8/17.
  */
 
 public class MyAddressFragment extends Fragment implements View.OnClickListener {

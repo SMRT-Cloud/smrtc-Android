@@ -23,7 +23,7 @@ import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerAdapter;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
 
 /**
- * Created by furszy on 6/20/17.
+ * Created by akshaynexus on 6/20/17.
  */
 
 public abstract class BaseRecyclerFragment<T> extends BaseFragment {

@@ -1,7 +1,7 @@
 package concierge.org.conciergewallet.service;
 
 /**
- * Created by furszy on 6/19/17.
+ * Created by akshaynexus on 6/19/17.
  */
 
 public class IntentsConstants {

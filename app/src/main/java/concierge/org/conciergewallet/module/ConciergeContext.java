@@ -11,7 +11,7 @@ import org.conciergej.params.TestNet3Params;
 import java.io.File;
 
 /**
- * Created by furszy on 6/4/17.
+ * Created by akshaynexus on 6/4/17.
  */
 
 public class ConciergeContext {
@@ -22,7 +22,7 @@ public class ConciergeContext {
     public static final Context CONTEXT = new Context(NETWORK_PARAMETERS);
 
     public static final String DEFAULT_RATE_COIN = "USD";
-    public static final long RATE_UPDATE_TIME = 72000000;
+    public static final long RATE_UPDATE_TIME = 20;
 
     public static final String ENABLE_BIP44_APP_VERSION = "1.03";
 

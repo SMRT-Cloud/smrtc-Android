@@ -7,7 +7,7 @@ import android.content.Intent;
 import concierge.org.conciergewallet.ui.wallet_activity.WalletActivity;
 
 /**
- * Created by furszy on 10/19/17.
+ * Created by akshaynexus on 10/19/17.
  */
 
 public class NavigationUtils {

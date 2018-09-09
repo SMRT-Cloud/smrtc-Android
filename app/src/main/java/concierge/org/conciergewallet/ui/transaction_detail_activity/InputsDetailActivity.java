@@ -7,7 +7,7 @@ import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.ui.base.BaseActivity;
 
 /**
- * Created by furszy on 8/14/17.
+ * Created by akshaynexus on 8/14/17.
  */
 
 public class InputsDetailActivity extends BaseActivity {

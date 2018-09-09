@@ -22,7 +22,7 @@ import global.ConciergeRate;
 import concierge.org.conciergewallet.ui.base.BaseFragment;
 
 /**
- * Created by furszy on 2/9/18.
+ * Created by akshaynexus on 2/9/18.
  */
 
 public class AmountInputFragment extends BaseFragment implements View.OnClickListener {

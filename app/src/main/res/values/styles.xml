@@ -114,7 +114,7 @@
 
     <style name="fab_text_style">
         <item name="android:background">@color/transparent</item>
-        <item name="android:textColor">@android:color/holo_orange_light</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="fab_colorNormal">@color/holo_orange_dark</item> <item name="fab_colorPressed">@color/holo_orange_dark</item>
         <item name="android:textStyle">bold</item>
         <item name="colorAccent">@color/colorAccent</item>

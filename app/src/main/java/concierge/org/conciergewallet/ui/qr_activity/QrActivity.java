@@ -9,7 +9,7 @@ import concierge.org.conciergewallet.ui.base.BaseActivity;
 import concierge.org.conciergewallet.utils.NavigationUtils;
 
 /**
- * Created by furszy on 6/8/17.
+ * Created by akshaynexus on 6/8/17.
  */
 
 public class QrActivity extends BaseActivity {

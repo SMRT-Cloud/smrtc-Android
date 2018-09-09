@@ -14,7 +14,7 @@ import concierge.org.conciergewallet.R;
 import concierge.org.conciergewallet.ui.base.BaseFragment;
 
 /**
- * Created by furszy on 8/3/17.
+ * Created by akshaynexus on 8/3/17.
  */
 
 public class RecommendedFeeFragment extends BaseFragment {

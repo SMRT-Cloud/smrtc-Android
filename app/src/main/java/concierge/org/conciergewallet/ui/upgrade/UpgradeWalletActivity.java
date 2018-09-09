@@ -21,7 +21,7 @@ import concierge.org.conciergewallet.ui.base.dialogs.SimpleTextDialog;
 import concierge.org.conciergewallet.utils.DialogsUtil;
 
 /**
- * Created by furszy on 10/8/17.
+ * Created by akshaynexus on 10/8/17.
  */
 
 public class UpgradeWalletActivity extends BaseActivity {

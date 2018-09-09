@@ -18,7 +18,7 @@ import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerViewHolde
 import concierge.org.conciergewallet.ui.base.tools.adapter.ListItemListeners;
 
 /**
- * Created by furszy on 7/2/17.
+ * Created by akshaynexus on 7/2/17.
  */
 
 public class RatesFragment extends BaseRecyclerFragment<ConciergeRate> implements ListItemListeners<ConciergeRate> {
