@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
+
 import org.conciergej.core.Coin;
 import org.conciergej.uri.ConciergeURI;
 
@@ -19,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import concierge.org.conciergewallet.R;
+import concierge.org.conciergewallet.ui.newqrscanner.BarcodeCaptureActivity;
 import global.AddressLabel;
 import concierge.org.conciergewallet.ui.base.BaseRecyclerFragment;
 import concierge.org.conciergewallet.ui.base.tools.adapter.BaseRecyclerAdapter;
@@ -40,6 +44,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
 
     private List<OutputWrapper> list;
     private BaseRecyclerAdapter adapter;
+    private static final int RC_BARCODE_CAPTURE = 9001;
 
     private int holderWaitingForAddress = -1;
 
@@ -112,7 +117,10 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                             }
                         }
                         holderWaitingForAddress = position;
-                        startActivityForResult(new Intent(getActivity(), ScanActivity.class),SCANNER_RESULT);
+                        Intent intent = new Intent(getContext(), BarcodeCaptureActivity.class);
+                        intent.putExtra(BarcodeCaptureActivity.AutoFocus, true);
+                        intent.putExtra(BarcodeCaptureActivity.UseFlash, false);
+                        startActivityForResult(intent, RC_BARCODE_CAPTURE);
                     }
                 });
                 if (data.getAddress()!=null){
@@ -272,17 +280,23 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == SCANNER_RESULT){
-            if (resultCode==RESULT_OK) {
+        if (requestCode == RC_BARCODE_CAPTURE){
+            if (resultCode== CommonStatusCodes.SUCCESS) {
                 try {
                     String address = "";
-                    address = data.getStringExtra(INTENT_EXTRA_RESULT);
+                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                    address = barcode.displayValue;
+                    // String usedAddress;
+                    String bitcoinUrl = address;
+                    String addresss = bitcoinUrl.replaceAll("concierge:(.*)\\?.*", "$1");
+                    //address = data.getStringExtra(INTENT_EXTRA_RESULT);
                     String usedAddress;
-                    if (conciergeModule.chechAddress(address)){
-                        usedAddress = address;
+
+                    if (conciergeModule.chechAddress(addresss)){
+                        usedAddress = addresss;
                     }else {
-                        ConciergeURI conciergeUri = new ConciergeURI(address);
-                        usedAddress = conciergeUri.getAddress().toBase58();
+                       // ConciergeURI conciergeUri = new ConciergeURI(address);
+                        usedAddress = addresss;
                     }
                     final String tempPubKey = usedAddress;
                     OutputHolder outputHolder = (OutputHolder) getRecycler().findViewHolderForAdapterPosition(holderWaitingForAddress);
