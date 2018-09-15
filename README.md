@@ -1,6 +1,6 @@
 # CCC-Wallet
 
-![alt text](https://github.com/CCC-Project/CCC-Android/blob/master/banner/Feature%20Image.jpg)
+![alt text](https://github.com/ConciergeCoin/Concierge/blob/master/src/qt/res/images/concierge_logo_horizontal.png)
 
 Welcome to the CCC mobile wallet for android!
 
