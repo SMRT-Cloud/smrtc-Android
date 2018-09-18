@@ -1,4 +1,4 @@
-package concierge.org.conciergewallet;
+package aquila.org.aquilawallet;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("concierge.org.conciergewallet", appContext.getPackageName());
+        assertEquals("aquila.org.aquilawallet", appContext.getPackageName());
     }
 }

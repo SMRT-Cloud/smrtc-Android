@@ -1,10 +1,10 @@
 package global;
 
-import org.conciergej.core.Context;
-import org.conciergej.core.NetworkParameters;
+import org.aquilaj.core.Context;
+import org.aquilaj.core.NetworkParameters;
 
 /**
- * Created by akshaynexus on 6/4/17.
+ * Created by MotoAcidic on 6/4/17.
  */
 
 public interface WalletConfiguration {

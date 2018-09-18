@@ -1,15 +1,15 @@
 package global.wrappers;
 
-import org.conciergej.core.NetworkParameters;
-import org.conciergej.core.Sha256Hash;
-import org.conciergej.core.TransactionOutput;
+import org.aquilaj.core.NetworkParameters;
+import org.aquilaj.core.Sha256Hash;
+import org.aquilaj.core.TransactionOutput;
 
 import java.io.Serializable;
 
 import global.AddressLabel;
 
 /**
- * Created by akshaynexus on 8/4/17.
+ * Created by MotoAcidic on 8/4/17.
  */
 
 public class InputWrapper implements Serializable{

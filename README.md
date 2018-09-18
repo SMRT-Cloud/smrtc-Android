@@ -1,8 +1,8 @@
-# CCC-Wallet
+# AQX-Wallet
 
-![alt text](https://github.com/ConciergeCoin/Concierge/blob/master/src/qt/res/images/concierge_logo_horizontal.png)
+![alt text](https://github.com/AquilaCoin/Aquila/blob/master/src/qt/res/images/aquila_logo_horizontal.png)
 
-Welcome to the CCC mobile wallet for android!
+Welcome to the AQX mobile wallet for android!
 
 
 This project contains several sub-projects:
@@ -11,7 +11,7 @@ app: The Android app itself. This is probably what you're searching for.
 
 pivtrumj: Stratum protocol implementation.
 
-concierge-core-0.14.3-12.1: conciergej.
+aquila-core-0.14.3-12.1: aquilaj.
 
 You can build all sub-projects at once using Gradle:
 
@@ -20,11 +20,11 @@ gradle clean build
 
 ### Cloning repository.
 
-Use git clone --recurse-submodules https://github.com/<CCC or akshaynexus>/CCC-Android.git
+Use git clone --recurse-submodules https://github.com/<AQX or MotoAcidic>/AQX-Android.git
   
 #### or
 
-Use git clone https://github.com/<CCC or akshaynexus>/CCC-Android.git
+Use git clone https://github.com/<AQX or MotoAcidic>/AQX-Android.git
   
 git submodule init
 

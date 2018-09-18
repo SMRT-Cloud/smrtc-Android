@@ -1,7 +1,7 @@
 package pivtrum;
 
-import org.conciergej.core.Address;
-import org.conciergej.core.CoinDefinition;
+import org.aquilaj.core.Address;
+import org.aquilaj.core.CoinDefinition;
 import org.furszy.client.IoManager;
 import org.furszy.client.exceptions.ConnectionFailureException;
 import org.slf4j.Logger;

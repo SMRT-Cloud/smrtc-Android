@@ -1,15 +1,15 @@
 package org.pivtrum.imp;
 
-import org.conciergej.core.ECKey;
-import org.conciergej.params.TestNet3Params;
+import org.aquilaj.core.ECKey;
+import org.aquilaj.params.TestNet3Params;
 import org.junit.Test;
 import org.spongycastle.math.ec.ECPoint;
 import org.spongycastle.util.encoders.Hex;
 
-import static org.conciergej.core.ECKey.CURVE;
+import static org.aquilaj.core.ECKey.CURVE;
 
 /**
- * Created by akshaynexus on 8/13/17.
+ * Created by MotoAcidic on 8/13/17.
  */
 
 public class Utils {

@@ -2,30 +2,30 @@ package wallet;
 
 import com.google.common.base.Charsets;
 
-import org.conciergej.core.Address;
-import org.conciergej.core.BlockChain;
-import org.conciergej.core.Coin;
-import org.conciergej.core.InsufficientMoneyException;
-import org.conciergej.core.PeerGroup;
-import org.conciergej.core.Sha256Hash;
-import org.conciergej.core.Transaction;
-import org.conciergej.core.TransactionInput;
-import org.conciergej.core.TransactionOutput;
-import org.conciergej.core.Utils;
-import org.conciergej.core.listeners.TransactionConfidenceEventListener;
-import org.conciergej.crypto.DeterministicKey;
-import org.conciergej.crypto.LinuxSecureRandom;
-import org.conciergej.crypto.MnemonicCode;
-import org.conciergej.crypto.MnemonicException;
-import org.conciergej.wallet.DeterministicKeyChain;
-import org.conciergej.wallet.DeterministicSeed;
-import org.conciergej.wallet.Protos;
-import org.conciergej.wallet.SendRequest;
-import org.conciergej.wallet.UnreadableWalletException;
-import org.conciergej.wallet.Wallet;
-import org.conciergej.wallet.WalletFiles;
-import org.conciergej.wallet.WalletProtobufSerializer;
-import org.conciergej.wallet.listeners.WalletCoinsReceivedEventListener;
+import org.aquilaj.core.Address;
+import org.aquilaj.core.BlockChain;
+import org.aquilaj.core.Coin;
+import org.aquilaj.core.InsufficientMoneyException;
+import org.aquilaj.core.PeerGroup;
+import org.aquilaj.core.Sha256Hash;
+import org.aquilaj.core.Transaction;
+import org.aquilaj.core.TransactionInput;
+import org.aquilaj.core.TransactionOutput;
+import org.aquilaj.core.Utils;
+import org.aquilaj.core.listeners.TransactionConfidenceEventListener;
+import org.aquilaj.crypto.DeterministicKey;
+import org.aquilaj.crypto.LinuxSecureRandom;
+import org.aquilaj.crypto.MnemonicCode;
+import org.aquilaj.crypto.MnemonicException;
+import org.aquilaj.wallet.DeterministicKeyChain;
+import org.aquilaj.wallet.DeterministicSeed;
+import org.aquilaj.wallet.Protos;
+import org.aquilaj.wallet.SendRequest;
+import org.aquilaj.wallet.UnreadableWalletException;
+import org.aquilaj.wallet.Wallet;
+import org.aquilaj.wallet.WalletFiles;
+import org.aquilaj.wallet.WalletProtobufSerializer;
+import org.aquilaj.wallet.listeners.WalletCoinsReceivedEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,7 +55,7 @@ import wallet.exceptions.InsufficientInputsException;
 import wallet.exceptions.TxNotFoundException;
 
 /**
- * Created by akshaynexus on 6/4/17.
+ * Created by MotoAcidic on 6/4/17.
  */
 
 public class WalletManager {
@@ -189,7 +189,7 @@ public class WalletManager {
         wallet.addCoinsReceivedEventListener(new WalletCoinsReceivedEventListener() {
             @Override
             public void onCoinsReceived(Wallet wallet, Transaction transaction, Coin coin, Coin coin1) {
-                org.conciergej.core.Context.propagate(conf.getWalletContext());
+                org.aquilaj.core.Context.propagate(conf.getWalletContext());
                 saveWallet();
             }
         });
@@ -201,7 +201,7 @@ public class WalletManager {
         }
         List<String> words = generateMnemonic(SEED_ENTROPY_EXTRA);
         DeterministicSeed seed = new DeterministicSeed(words, null, "", System.currentTimeMillis());
-        return Wallet.fromSeed(conf.getNetworkParams(), seed, DeterministicKeyChain.KeyChainType.BIP44_CCC_ONLY);
+        return Wallet.fromSeed(conf.getNetworkParams(), seed, DeterministicKeyChain.KeyChainType.BIP44_AQX_ONLY);
     }
 
     public static List<String> generateMnemonic(int entropyBitsSize){
@@ -281,7 +281,7 @@ public class WalletManager {
         wallet = Wallet.fromSeed(
                 conf.getNetworkParams(),
                 new DeterministicSeed(mnemonic,null,"",timestamp),
-                bip44? DeterministicKeyChain.KeyChainType.BIP44_CCC_ONLY: DeterministicKeyChain.KeyChainType.BIP32
+                bip44? DeterministicKeyChain.KeyChainType.BIP44_AQX_ONLY: DeterministicKeyChain.KeyChainType.BIP32
         );
         restoreWallet(wallet);
     }

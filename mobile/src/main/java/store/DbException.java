@@ -1,7 +1,7 @@
 package store;
 
 /**
- * Created by akshaynexus on 6/22/17.
+ * Created by MotoAcidic on 6/22/17.
  */
 
 public class DbException extends Exception {

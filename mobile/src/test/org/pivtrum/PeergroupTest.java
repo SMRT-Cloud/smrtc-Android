@@ -1,9 +1,9 @@
 /*
 package org.pivtrum;
 
-import org.conciergej.core.Address;
-import org.conciergej.core.Coin;
-import org.conciergej.utils.MonetaryFormat;
+import org.aquilaj.core.Address;
+import org.aquilaj.core.Coin;
+import org.aquilaj.utils.MonetaryFormat;
 import org.furszy.client.exceptions.ConnectionFailureException;
 import org.junit.Test;
 import org.pivtrum.imp.AddressStoreImp;
@@ -30,7 +30,7 @@ import store.CantInsertAddressException;
 import wallet.WalletManager;
 
 *
- * Created by akshaynexus on 6/15/17.
+ * Created by MotoAcidic on 6/15/17.
  * todo: probar qué id tienen los push del servidor del subscribe address o del subscribe height... necesito saber eso para decodificarlo.
 
 

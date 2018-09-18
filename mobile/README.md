@@ -1,19 +1,19 @@
-# Core module for concierge light wallets.
+# Core module for aquila light wallets.
 
-This is a java wrapper library for CCC. Share common CCC code between different apps/projects to prevent WET code and make things more DRY. Mainly in the context of light wallets. In the future this could be extended to a full implementation of CCC node in java. But as this would be a huge endeavour and have many things in the route map already don't expect it in the near future - but PRs are accepted ;-)
+This is a java wrapper library for AQX. Share common AQX code between different apps/projects to prevent WET code and make things more DRY. Mainly in the context of light wallets. In the future this could be extended to a full implementation of AQX node in java. But as this would be a huge endeavour and have many things in the route map already don't expect it in the near future - but PRs are accepted ;-)
 
 
 Projects using this module:
 =====
 
-* [CCC Android Wallet](https://github.com/furszy/CCC-Android.git)
-* [CCC Desktop Wallet](--) --> No link publicly available yet ;) 
+* [AQX Android Wallet](https://github.com/furszy/AQX-Android.git)
+* [AQX Desktop Wallet](--) --> No link publicly available yet ;) 
 
 
 Links
 =====
 
-* [CCC](https://concierge.org/)
+* [AQX](https://aquila.org/)
 
 
 

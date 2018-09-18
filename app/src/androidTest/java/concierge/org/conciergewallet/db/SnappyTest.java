@@ -1,4 +1,4 @@
-package concierge.org.conciergewallet.db;
+package aquila.org.aquilawallet.db;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -7,14 +7,14 @@ import com.snappydb.SnappydbException;
 
 import org.junit.Test;
 
-import concierge.org.conciergewallet.module.store.SnappyStore;
+import aquila.org.aquilawallet.module.store.SnappyStore;
 import store.AddressNotFoundException;
 import store.AddressStore;
 import store.CantInsertAddressException;
 
 
 /**
- * Created by akshaynexus on 6/15/17.
+ * Created by MotoAcidic on 6/15/17.
  */
 
 public class SnappyTest {

@@ -1,6 +1,6 @@
 package chain;
 
-import org.conciergej.core.PeerGroup;
+import org.aquilaj.core.PeerGroup;
 
 import java.util.Set;
 

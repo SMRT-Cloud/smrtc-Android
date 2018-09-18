@@ -4,27 +4,27 @@ import com.google.common.base.Stopwatch;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import global.utils.Io;
-import org.conciergej.core.BlockChain;
-import org.conciergej.core.CheckpointManager;
-import org.conciergej.core.Peer;
-import org.conciergej.core.PeerGroup;
-import org.conciergej.core.Sha256Hash;
-import org.conciergej.core.StoredBlock;
-import org.conciergej.core.Transaction;
-import org.conciergej.core.TransactionBroadcast;
-import org.conciergej.core.listeners.PeerConnectedEventListener;
-import org.conciergej.core.listeners.PeerDataEventListener;
-import org.conciergej.core.listeners.PeerDisconnectedEventListener;
-import org.conciergej.net.discovery.MultiplexingDiscovery;
-import org.conciergej.net.discovery.PeerDiscovery;
-import org.conciergej.net.discovery.PeerDiscoveryException;
-import org.conciergej.params.MainNetParams;
-import org.conciergej.params.RegTestParams;
-import org.conciergej.params.TestNet3Params;
-import org.conciergej.store.BlockStore;
-import org.conciergej.store.BlockStoreException;
-import org.conciergej.store.LevelDBBlockStore;
-import org.conciergej.store.SPVBlockStore;
+import org.aquilaj.core.BlockChain;
+import org.aquilaj.core.CheckpointManager;
+import org.aquilaj.core.Peer;
+import org.aquilaj.core.PeerGroup;
+import org.aquilaj.core.Sha256Hash;
+import org.aquilaj.core.StoredBlock;
+import org.aquilaj.core.Transaction;
+import org.aquilaj.core.TransactionBroadcast;
+import org.aquilaj.core.listeners.PeerConnectedEventListener;
+import org.aquilaj.core.listeners.PeerDataEventListener;
+import org.aquilaj.core.listeners.PeerDisconnectedEventListener;
+import org.aquilaj.net.discovery.MultiplexingDiscovery;
+import org.aquilaj.net.discovery.PeerDiscovery;
+import org.aquilaj.net.discovery.PeerDiscoveryException;
+import org.aquilaj.params.MainNetParams;
+import org.aquilaj.params.RegTestParams;
+import org.aquilaj.params.TestNet3Params;
+import org.aquilaj.store.BlockStore;
+import org.aquilaj.store.BlockStoreException;
+import org.aquilaj.store.LevelDBBlockStore;
+import org.aquilaj.store.SPVBlockStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -277,7 +277,7 @@ public class BlockchainManager {
                     peerGroup.addPeerDiscovery(new PeerDiscovery() {
                         @Override
                         public InetSocketAddress[] getPeers(long services, long timeoutValue, TimeUnit timeUnit) throws PeerDiscoveryException {
-                            // No regtest in concierge yet..
+                            // No regtest in aquila yet..
                             return null; //RegtestUtil.getPeersToConnect(conf.getNetworkParams(),conf.getNode());
                         }
 

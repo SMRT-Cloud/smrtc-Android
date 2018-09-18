@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@drawable/bg_toolbar_login"
-    tools:context="concierge.org.conciergewallet.ui.base.BaseDrawerActivity">
+    tools:context="aquila.org.aquilawallet.ui.base.BaseDrawerActivity">
 
 
     <LinearLayout

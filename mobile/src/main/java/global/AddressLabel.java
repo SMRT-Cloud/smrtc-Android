@@ -1,6 +1,6 @@
 package global;
 
-import org.conciergej.core.Sha256Hash;
+import org.aquilaj.core.Sha256Hash;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by akshaynexus on 6/22/17.
+ * Created by MotoAcidic on 6/22/17.
  */
 
 public class AddressLabel implements Serializable{

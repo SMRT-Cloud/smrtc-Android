@@ -1,9 +1,9 @@
 package wallet.exceptions;
 
-import org.conciergej.core.Coin;
+import org.aquilaj.core.Coin;
 
 /**
- * Created by akshaynexus on 8/9/17.
+ * Created by MotoAcidic on 8/9/17.
  */
 
 public class InsufficientInputsException extends Exception {

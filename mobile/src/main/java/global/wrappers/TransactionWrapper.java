@@ -1,8 +1,8 @@
 package global.wrappers;
 
-import org.conciergej.core.Coin;
-import org.conciergej.core.Sha256Hash;
-import org.conciergej.core.Transaction;
+import org.aquilaj.core.Coin;
+import org.aquilaj.core.Sha256Hash;
+import org.aquilaj.core.Transaction;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Map;
 import global.AddressLabel;
 
 /**
- * Created by akshaynexus on 6/29/17.
+ * Created by MotoAcidic on 6/29/17.
  */
 public class TransactionWrapper implements Serializable{
 

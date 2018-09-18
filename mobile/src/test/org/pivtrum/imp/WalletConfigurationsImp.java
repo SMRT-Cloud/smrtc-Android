@@ -1,13 +1,13 @@
 package org.pivtrum.imp;
 
-import org.conciergej.core.Context;
-import org.conciergej.core.NetworkParameters;
-import org.conciergej.params.TestNet3Params;
+import org.aquilaj.core.Context;
+import org.aquilaj.core.NetworkParameters;
+import org.aquilaj.params.TestNet3Params;
 
 import global.WalletConfiguration;
 
 /**
- * Created by akshaynexus on 6/16/17.
+ * Created by MotoAcidic on 6/16/17.
  */
 
 public class WalletConfigurationsImp implements WalletConfiguration {

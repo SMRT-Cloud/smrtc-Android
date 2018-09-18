@@ -33,11 +33,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/valueConcierge"
+        android:id="@+id/valueAquila"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="230 CCC"
+        android:text="230 AQX"
         android:textSize="16sp"
         />
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="0.0002 CCC"
+            android:text="0.0002 AQX"
             android:textSize="14sp"
             />
 

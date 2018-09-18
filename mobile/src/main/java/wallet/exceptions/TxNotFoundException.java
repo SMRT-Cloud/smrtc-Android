@@ -1,7 +1,7 @@
 package wallet.exceptions;
 
 /**
- * Created by akshaynexus on 8/10/17.
+ * Created by MotoAcidic on 8/10/17.
  */
 
 public class TxNotFoundException extends Exception {

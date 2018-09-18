@@ -1,7 +1,7 @@
 package pivtrum.messages;
 
 /**
- * Created by akshaynexus on 6/12/17.
+ * Created by MotoAcidic on 6/12/17.
  */
 
 public enum Method {
@@ -72,7 +72,7 @@ public enum Method {
 
     /**
      *
-     * Return an ordered list of UTXOs sent to a concierge address.
+     * Return an ordered list of UTXOs sent to a aquila address.
      *
      * blockchain.address.listunspent(**address**)
      *
@@ -88,7 +88,7 @@ public enum Method {
      * transaction was confirmed in, *tx_hash* the transaction hash in
      * hexadecimal, *tx_pos* the zero-based index of the output in the
      * transaction's list of outputs, and *value* its integer value in
-     * minimum coin units (satoshis in the case of Concierge).
+     * minimum coin units (satoshis in the case of Aquila).
      *
      */
 

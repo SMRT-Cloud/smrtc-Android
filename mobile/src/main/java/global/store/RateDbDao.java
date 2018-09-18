@@ -1,16 +1,16 @@
 package global.store;
 
-import global.ConciergeRate;
+import global.AquilaRate;
 
 /**
- * Created by akshaynexus on 3/3/18.
+ * Created by MotoAcidic on 3/3/18.
  */
 
 public interface RateDbDao<T> extends AbstractDbDao<T>{
 
-    ConciergeRate getRate(String coin);
+    AquilaRate getRate(String coin);
 
 
-    void insertOrUpdateIfExist(ConciergeRate conciergeRate);
+    void insertOrUpdateIfExist(AquilaRate aquilaRate);
 
 }

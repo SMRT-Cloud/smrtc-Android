@@ -10,7 +10,7 @@
     android:paddingRight="12dp"
     android:paddingTop="20dp"
     android:gravity="left"
-    tools:context="concierge.org.conciergewallet.ui.base.BaseDrawerActivity">
+    tools:context="aquila.org.aquilawallet.ui.base.BaseDrawerActivity">
 
 
     <TextView

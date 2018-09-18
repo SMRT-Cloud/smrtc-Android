@@ -1,7 +1,7 @@
-### Concierge wallet protocol
+### Aquila wallet protocol
 
 
-Concierge server is based on electrum server. Tiene el mismo flujo.
+Aquila server is based on electrum server. Tiene el mismo flujo.
 
 Cada request tiene su propia respuesta del lado del servidor, incluyendo los request de suscripciones.
 

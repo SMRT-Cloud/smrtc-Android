@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by akshaynexus on 6/18/17.
+ * Created by MotoAcidic on 6/18/17.
  */
 
 public class GetHeader extends BaseMsg<GetHeader> {
