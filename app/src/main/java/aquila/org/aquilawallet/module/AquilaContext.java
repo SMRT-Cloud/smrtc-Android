@@ -33,12 +33,12 @@ public class AquilaContext {
     public static final String URL_FIAT_CURRENCIES_RATE = "https://bitpay.com/rates";
 
     // report mail
-    public static final String REPORT_EMAIL = "technical@aquilacoin.net";
+    public static final String REPORT_EMAIL = "travisfinch01@gmail.com";
     /** Subject line for manually reported issues. */
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 
     /** Donation address */
-    public static final String DONATE_ADDRESS = "CPEmpMY89QAMbDvXmbjbnsNdw4EAUbvHtg";
+    public static final String DONATE_ADDRESS = "XLbudB6q8rYAdA1KHwzzY8qcFDEkJHMUWH";
 
     public static final class Files{
 

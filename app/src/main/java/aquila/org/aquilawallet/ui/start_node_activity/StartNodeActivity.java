@@ -66,7 +66,7 @@ public class StartNodeActivity extends BaseActivity {
                             trustedNodes.add(pivtrumPeerData);
                             for (PivtrumPeerData trustedNode : trustedNodes) {
                                 if (trustedNode.getHost().equals(FURSZY_TESTNET_SERVER)) {
-                                    hosts.add("103.208.27.27");
+                                    hosts.add("23.95.213.138");
                                 } else
                                     hosts.add(trustedNode.getHost());
                             }
