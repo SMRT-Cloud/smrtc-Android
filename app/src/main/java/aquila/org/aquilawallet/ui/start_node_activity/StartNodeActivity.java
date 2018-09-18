@@ -139,7 +139,7 @@ public class StartNodeActivity extends BaseActivity {
                 selectionPos = i;
             }
             if (trustedNode.getHost().equals(FURSZY_TESTNET_SERVER)){
-                hosts.add("80.208.228.190");
+                hosts.add("23.95.213.138");
             }else
                 hosts.add(trustedNode.getHost());
         }
