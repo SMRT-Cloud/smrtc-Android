@@ -48,7 +48,7 @@ public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWr
         View view = super.onCreateView(inflater, container, savedInstanceState);
         setEmptyView(R.drawable.img_transaction_empty);
         setEmptyText(getString(R.string.no_transactions));
-        setEmptyTextColor(Color.parseColor("#aqxaqx"));
+        setEmptyTextColor(Color.parseColor("#cccccc"));
         return view;
     }
 

@@ -27,7 +27,7 @@ public class RatesFragment extends BaseRecyclerFragment<AquilaRate> implements L
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         setEmptyText("No rate available");
-        setEmptyTextColor(Color.parseColor("#aqxaqx"));
+        setEmptyTextColor(Color.parseColor("#cccccc"));
         return view;
     }
 
