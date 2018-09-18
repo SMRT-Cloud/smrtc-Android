@@ -259,9 +259,9 @@ public class AquilaApplication extends Application implements ContextWrapper {
     public void setTrustedServer(PivtrumPeerData trustedServer) {
         networkConf.setTrustedServer(trustedServer);
         if(trustedServer.getHost() !=null)
-        aquilaModule.getConf().saveTrustedNode(trustedServer.getHost(),51470);
+        aquilaModule.getConf().saveTrustedNode(trustedServer.getHost(),45454);
         else
-            aquilaModule.getConf().saveTrustedNode("209.250.237.27",51470);
+            aquilaModule.getConf().saveTrustedNode("23.95.213.138",45454);
         appConf.saveTrustedNode(trustedServer);
     }
 
