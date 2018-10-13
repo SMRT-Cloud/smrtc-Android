@@ -1,10 +1,10 @@
 package global;
 
-import org.aquilaj.core.Context;
-import org.aquilaj.core.NetworkParameters;
+import org.smartcloudj.core.Context;
+import org.smartcloudj.core.NetworkParameters;
 
 /**
- * Created by MotoAcidic on 6/4/17.
+ * Created by Telostia on 6/4/17.
  */
 
 public interface WalletConfiguration {

@@ -3,7 +3,7 @@ package pivtrum.listeners;
 import pivtrum.PivtrumPeer;
 
 /**
- * Created by MotoAcidic on 6/17/17.
+ * Created by Telostia on 6/17/17.
  */
 
 public interface PeerListener {

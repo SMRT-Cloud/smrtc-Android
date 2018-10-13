@@ -8,7 +8,7 @@ import pivtrum.messages.responses.Unspent;
 import pivtrum.utility.TxHashHeightWrapper;
 
 /**
- * Created by MotoAcidic on 6/17/17.
+ * Created by Telostia on 6/17/17.
  */
 
 public interface PeerDataListener {

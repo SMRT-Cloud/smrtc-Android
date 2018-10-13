@@ -1,13 +1,13 @@
 package org.pivtrum.imp;
 
-import org.aquilaj.core.Context;
-import org.aquilaj.core.NetworkParameters;
-import org.aquilaj.params.TestNet3Params;
+import org.smartcloudj.core.Context;
+import org.smartcloudj.core.NetworkParameters;
+import org.smartcloudj.params.TestNet3Params;
 
 import global.WalletConfiguration;
 
 /**
- * Created by MotoAcidic on 6/16/17.
+ * Created by Telostia on 6/16/17.
  */
 
 public class WalletConfigurationsImp implements WalletConfiguration {

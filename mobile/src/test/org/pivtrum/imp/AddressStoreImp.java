@@ -12,7 +12,7 @@ import store.CantInsertAddressException;
 import store.DbException;
 
 /**
- * Created by MotoAcidic on 6/16/17.
+ * Created by Telostia on 6/16/17.
  */
 
 public class AddressStoreImp implements AddressStore {

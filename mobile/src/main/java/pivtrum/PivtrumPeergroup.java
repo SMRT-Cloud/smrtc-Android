@@ -1,7 +1,7 @@
 package pivtrum;
 
-import org.aquilaj.core.Address;
-import org.aquilaj.core.CoinDefinition;
+import org.smartcloudj.core.Address;
+import org.smartcloudj.core.CoinDefinition;
 import org.furszy.client.IoManager;
 import org.furszy.client.exceptions.ConnectionFailureException;
 import org.slf4j.Logger;

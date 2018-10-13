@@ -1,6 +1,6 @@
 package chain;
 
-import org.aquilaj.core.PeerGroup;
+import org.smartcloudj.core.PeerGroup;
 
 import java.util.Set;
 

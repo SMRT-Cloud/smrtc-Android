@@ -10,7 +10,7 @@
     android:paddingRight="12dp"
     android:paddingTop="20dp"
     android:gravity="left"
-    tools:context="aquila.org.aquilawallet.ui.base.BaseDrawerActivity">
+    tools:context="smartcloud.cash.smartcloudwallet.ui.base.BaseDrawerActivity">
 
 
     <TextView

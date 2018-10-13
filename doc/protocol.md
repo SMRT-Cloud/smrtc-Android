@@ -1,7 +1,7 @@
-### Aquila wallet protocol
+### Smartcloud wallet protocol
 
 
-Aquila server is based on electrum server. Tiene el mismo flujo.
+Smartcloud server is based on electrum server. Tiene el mismo flujo.
 
 Cada request tiene su propia respuesta del lado del servidor, incluyendo los request de suscripciones.
 

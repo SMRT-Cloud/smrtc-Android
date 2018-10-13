@@ -8,7 +8,7 @@ import java.util.List;
 import pivtrum.utility.TxHashHeightWrapper;
 
 /**
- * Created by MotoAcidic on 6/18/17.
+ * Created by Telostia on 6/18/17.
  */
 
 public class AddressBalance implements Serializable{

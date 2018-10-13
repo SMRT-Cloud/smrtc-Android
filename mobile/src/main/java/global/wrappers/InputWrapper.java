@@ -1,15 +1,15 @@
 package global.wrappers;
 
-import org.aquilaj.core.NetworkParameters;
-import org.aquilaj.core.Sha256Hash;
-import org.aquilaj.core.TransactionOutput;
+import org.smartcloudj.core.NetworkParameters;
+import org.smartcloudj.core.Sha256Hash;
+import org.smartcloudj.core.TransactionOutput;
 
 import java.io.Serializable;
 
 import global.AddressLabel;
 
 /**
- * Created by MotoAcidic on 8/4/17.
+ * Created by Telostia on 8/4/17.
  */
 
 public class InputWrapper implements Serializable{

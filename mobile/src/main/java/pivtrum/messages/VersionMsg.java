@@ -5,7 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by MotoAcidic on 6/12/17.
+ * Created by Telostia on 6/12/17.
  */
 
 public class VersionMsg extends BaseMsg<VersionMsg> {

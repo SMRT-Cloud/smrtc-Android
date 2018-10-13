@@ -1,7 +1,7 @@
 package global.exceptions;
 
 /**
- * Created by MotoAcidic on 10/7/17.
+ * Created by Telostia on 10/7/17.
  */
 
 public class CantSweepBalanceException extends Throwable {

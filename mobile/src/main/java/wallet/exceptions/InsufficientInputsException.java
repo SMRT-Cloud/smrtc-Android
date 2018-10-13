@@ -1,9 +1,9 @@
 package wallet.exceptions;
 
-import org.aquilaj.core.Coin;
+import org.smartcloudj.core.Coin;
 
 /**
- * Created by MotoAcidic on 8/9/17.
+ * Created by Telostia on 8/9/17.
  */
 
 public class InsufficientInputsException extends Exception {

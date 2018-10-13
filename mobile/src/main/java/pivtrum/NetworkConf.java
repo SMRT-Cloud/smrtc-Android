@@ -6,14 +6,14 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by MotoAcidic on 6/12/17.
+ * Created by Telostia on 6/12/17.
  *
  * Class in charge of have the default params and save data from the network like servers.
  */
 
 public class NetworkConf {
 
-    private static final String CLIENT_NAME = "aquila_mobile";
+    private static final String CLIENT_NAME = "smartcloud_mobile";
     private static final String MAX_PROTOCOL_VERSION = "2.9.5";
     private static final String MIN_PROTOCOL_VERSION = "1.0";
     /** Trusted server selected on the first screen of the app */

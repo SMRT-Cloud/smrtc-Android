@@ -33,11 +33,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/valueAquila"
+        android:id="@+id/valueSmartcloud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="230 AQX"
+        android:text="230 SMRTC"
         android:textSize="16sp"
         />
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="0.0002 AQX"
+            android:text="0.0002 SMRTC"
             android:textSize="14sp"
             />
 

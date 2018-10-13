@@ -6,7 +6,7 @@ import java.util.List;
 import pivtrum.utility.TxHashHeightWrapper;
 
 /**
- * Created by MotoAcidic on 9/16/17.
+ * Created by Telostia on 9/16/17.
  */
 
 public class StatusHistory {

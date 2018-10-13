@@ -4,27 +4,27 @@ import com.google.common.base.Stopwatch;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import global.utils.Io;
-import org.aquilaj.core.BlockChain;
-import org.aquilaj.core.CheckpointManager;
-import org.aquilaj.core.Peer;
-import org.aquilaj.core.PeerGroup;
-import org.aquilaj.core.Sha256Hash;
-import org.aquilaj.core.StoredBlock;
-import org.aquilaj.core.Transaction;
-import org.aquilaj.core.TransactionBroadcast;
-import org.aquilaj.core.listeners.PeerConnectedEventListener;
-import org.aquilaj.core.listeners.PeerDataEventListener;
-import org.aquilaj.core.listeners.PeerDisconnectedEventListener;
-import org.aquilaj.net.discovery.MultiplexingDiscovery;
-import org.aquilaj.net.discovery.PeerDiscovery;
-import org.aquilaj.net.discovery.PeerDiscoveryException;
-import org.aquilaj.params.MainNetParams;
-import org.aquilaj.params.RegTestParams;
-import org.aquilaj.params.TestNet3Params;
-import org.aquilaj.store.BlockStore;
-import org.aquilaj.store.BlockStoreException;
-import org.aquilaj.store.LevelDBBlockStore;
-import org.aquilaj.store.SPVBlockStore;
+import org.smartcloudj.core.BlockChain;
+import org.smartcloudj.core.CheckpointManager;
+import org.smartcloudj.core.Peer;
+import org.smartcloudj.core.PeerGroup;
+import org.smartcloudj.core.Sha256Hash;
+import org.smartcloudj.core.StoredBlock;
+import org.smartcloudj.core.Transaction;
+import org.smartcloudj.core.TransactionBroadcast;
+import org.smartcloudj.core.listeners.PeerConnectedEventListener;
+import org.smartcloudj.core.listeners.PeerDataEventListener;
+import org.smartcloudj.core.listeners.PeerDisconnectedEventListener;
+import org.smartcloudj.net.discovery.MultiplexingDiscovery;
+import org.smartcloudj.net.discovery.PeerDiscovery;
+import org.smartcloudj.net.discovery.PeerDiscoveryException;
+import org.smartcloudj.params.MainNetParams;
+import org.smartcloudj.params.RegTestParams;
+import org.smartcloudj.params.TestNet3Params;
+import org.smartcloudj.store.BlockStore;
+import org.smartcloudj.store.BlockStoreException;
+import org.smartcloudj.store.LevelDBBlockStore;
+import org.smartcloudj.store.SPVBlockStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -277,7 +277,7 @@ public class BlockchainManager {
                     peerGroup.addPeerDiscovery(new PeerDiscovery() {
                         @Override
                         public InetSocketAddress[] getPeers(long services, long timeoutValue, TimeUnit timeUnit) throws PeerDiscoveryException {
-                            // No regtest in aquila yet..
+                            // No regtest in smartcloud yet..
                             return null; //RegtestUtil.getPeersToConnect(conf.getNetworkParams(),conf.getNode());
                         }
 

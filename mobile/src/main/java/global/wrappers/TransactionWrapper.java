@@ -1,8 +1,8 @@
 package global.wrappers;
 
-import org.aquilaj.core.Coin;
-import org.aquilaj.core.Sha256Hash;
-import org.aquilaj.core.Transaction;
+import org.smartcloudj.core.Coin;
+import org.smartcloudj.core.Sha256Hash;
+import org.smartcloudj.core.Transaction;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Map;
 import global.AddressLabel;
 
 /**
- * Created by MotoAcidic on 6/29/17.
+ * Created by Telostia on 6/29/17.
  */
 public class TransactionWrapper implements Serializable{
 

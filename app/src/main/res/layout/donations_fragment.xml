@@ -6,7 +6,7 @@
     android:paddingTop="40dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="aquila.org.aquilawallet.ui.base.BaseDrawerActivity">
+    tools:context="smartcloud.cash.smartcloudwallet.ui.base.BaseDrawerActivity">
 
     <LinearLayout
         android:orientation="vertical"

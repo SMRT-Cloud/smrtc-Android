@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Created by MotoAcidic on 6/14/17.
+ * Created by Telostia on 6/14/17.
  */
 
 public interface AddressStore {

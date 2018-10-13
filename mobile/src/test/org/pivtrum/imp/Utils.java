@@ -1,15 +1,15 @@
 package org.pivtrum.imp;
 
-import org.aquilaj.core.ECKey;
-import org.aquilaj.params.TestNet3Params;
+import org.smartcloudj.core.ECKey;
+import org.smartcloudj.params.TestNet3Params;
 import org.junit.Test;
 import org.spongycastle.math.ec.ECPoint;
 import org.spongycastle.util.encoders.Hex;
 
-import static org.aquilaj.core.ECKey.CURVE;
+import static org.smartcloudj.core.ECKey.CURVE;
 
 /**
- * Created by MotoAcidic on 8/13/17.
+ * Created by Telostia on 8/13/17.
  */
 
 public class Utils {

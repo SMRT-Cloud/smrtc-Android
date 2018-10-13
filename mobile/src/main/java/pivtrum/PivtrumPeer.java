@@ -2,7 +2,7 @@ package pivtrum;
 
 import com.google.protobuf.ByteString;
 
-import org.aquilaj.core.Sha256Hash;
+import org.smartcloudj.core.Sha256Hash;
 import org.furszy.client.IoManager;
 import org.furszy.client.basic.BaseMsgFuture;
 import org.furszy.client.basic.IoSessionConfImp;
@@ -54,7 +54,7 @@ import pivtrum.messages.responses.Unspent;
 import pivtrum.utility.TxHashHeightWrapper;
 
 /**
- * Created by MotoAcidic on 6/12/17.
+ * Created by Telostia on 6/12/17.
  *
  * Class in charge of connect to a single peer on the network
  *

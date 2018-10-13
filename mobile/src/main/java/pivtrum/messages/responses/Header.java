@@ -1,7 +1,7 @@
 package pivtrum.messages.responses;
 
 /**
- * Created by MotoAcidic on 6/18/17.
+ * Created by Telostia on 6/18/17.
  *
  * * "block_height": <integer>,
  * 'version': <integer>,
